@@ -1,0 +1,29 @@
+01/22/2024 11:31:10 - WARNING - transformers_modules.chatglm2-6b.modeling_chatglm - `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+{'train_runtime': 1.9039, 'train_samples_per_second': 16.808, 'train_steps_per_second': 1.05, 'train_loss': 0.51702880859375, 'epoch': 2.0}
+train_result <class 'transformers.trainer_utils.TrainOutput'>
+TrainOutput(global_step=2, training_loss=0.51702880859375, metrics={'train_runtime': 1.9039, 'train_samples_per_second': 16.808, 'train_steps_per_second': 1.05, 'train_loss': 0.51702880859375, 'epoch': 2.0})
+metric type <class 'dict'>
+{'train_runtime': 1.9039, 'train_samples_per_second': 16.808, 'train_steps_per_second': 1.05, 'train_loss': 0.51702880859375, 'epoch': 2.0}
+***** train metrics *****
+  epoch                    =        2.0
+  train_loss               =      0.517
+  train_runtime            = 0:00:01.90
+  train_samples            =          2
+  train_samples_per_second =     16.808
+  train_steps_per_second   =       1.05
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1786] 2024-01-22 11:31:10,772 >> ***** Running training *****
+[INFO|trainer.py:1787] 2024-01-22 11:31:10,772 >>   Num examples = 2
+[INFO|trainer.py:1788] 2024-01-22 11:31:10,772 >>   Num Epochs = 2
+[INFO|trainer.py:1789] 2024-01-22 11:31:10,772 >>   Instantaneous batch size per device = 1
+[INFO|trainer.py:1790] 2024-01-22 11:31:10,772 >>   Total train batch size (w. parallel, distributed & accumulation) = 16
+[INFO|trainer.py:1791] 2024-01-22 11:31:10,772 >>   Gradient Accumulation steps = 16
+[INFO|trainer.py:1792] 2024-01-22 11:31:10,772 >>   Total optimization steps = 2
+[INFO|trainer.py:1793] 2024-01-22 11:31:10,773 >>   Number of trainable parameters = 917,504
+[INFO|integrations.py:727] 2024-01-22 11:31:10,799 >> Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+  0%|                                                                                                       | 0/2 [00:00<?, ?it/s]/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.15it/s][INFO|trainer.py:2053] 2024-01-22 11:31:12,677 >>
+Training completed. Do not forget to share your model on huggingface.co/models =)
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.07it/s]

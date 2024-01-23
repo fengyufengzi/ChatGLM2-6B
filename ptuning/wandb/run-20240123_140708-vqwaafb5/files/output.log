@@ -1,0 +1,41 @@
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1786] 2024-01-23 14:07:14,288 >> ***** Running training *****
+[INFO|trainer.py:1787] 2024-01-23 14:07:14,288 >>   Num examples = 10
+[INFO|trainer.py:1788] 2024-01-23 14:07:14,288 >>   Num Epochs = 10
+[INFO|trainer.py:1789] 2024-01-23 14:07:14,288 >>   Instantaneous batch size per device = 1
+[INFO|trainer.py:1790] 2024-01-23 14:07:14,288 >>   Total train batch size (w. parallel, distributed & accumulation) = 16
+[INFO|trainer.py:1791] 2024-01-23 14:07:14,288 >>   Gradient Accumulation steps = 16
+[INFO|trainer.py:1792] 2024-01-23 14:07:14,288 >>   Total optimization steps = 10
+[INFO|trainer.py:1793] 2024-01-23 14:07:14,290 >>   Number of trainable parameters = 1,835,008
+[INFO|integrations.py:727] 2024-01-23 14:07:14,292 >> Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+  0%|          | 0/10 [00:00<?, ?it/s]/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+01/23/2024 14:07:14 - WARNING - transformers_modules.chatglm2-6b.modeling_chatglm - `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+
+
+
+
+
+ 80%|████████  | 8/10 [00:15<00:03,  1.55s/it]
+{'loss': 1.5063, 'learning_rate': 0.0, 'epoch': 6.4}
+Saving PrefixEncoder
+{'train_runtime': 19.0833, 'train_samples_per_second': 8.384, 'train_steps_per_second': 0.524, 'train_loss': 1.506268310546875, 'epoch': 6.4}
+train_result <class 'transformers.trainer_utils.TrainOutput'>
+TrainOutput(global_step=10, training_loss=1.506268310546875, metrics={'train_runtime': 19.0833, 'train_samples_per_second': 8.384, 'train_steps_per_second': 0.524, 'train_loss': 1.506268310546875, 'epoch': 6.4})
+metric type <class 'dict'>
+{'train_runtime': 19.0833, 'train_samples_per_second': 8.384, 'train_steps_per_second': 0.524, 'train_loss': 1.506268310546875, 'epoch': 6.4}
+***** train metrics *****
+  epoch                    =        6.4
+  train_loss               =     1.5063
+  train_runtime            = 0:00:19.08
+  train_samples            =         10
+  train_samples_per_second =      8.384
+100%|██████████| 10/10 [00:19<00:00,  1.71s/it][INFO|configuration_utils.py:458] 2024-01-23 14:07:33,351 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-4-2/checkpoint-10/config.json
+[INFO|configuration_utils.py:364] 2024-01-23 14:07:33,351 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-4-2/checkpoint-10/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-23 14:07:33,357 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-4-2/checkpoint-10/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-23 14:07:33,358 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-4-2/checkpoint-10/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-23 14:07:33,358 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-4-2/checkpoint-10/special_tokens_map.json
+[INFO|trainer.py:2053] 2024-01-23 14:07:33,373 >>
+Training completed. Do not forget to share your model on huggingface.co/models =)
+100%|██████████| 10/10 [00:19<00:00,  1.91s/it]

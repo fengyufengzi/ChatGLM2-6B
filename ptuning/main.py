@@ -22,6 +22,8 @@ import logging
 import os
 import sys
 import json
+import wandb
+from types import SimpleNamespace
 
 import numpy as np
 from datasets import load_dataset
@@ -29,6 +31,7 @@ import jieba
 from rouge_chinese import Rouge
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 import torch
+import time
 
 import transformers
 from transformers import (
@@ -45,7 +48,7 @@ from trainer_seq2seq import Seq2SeqTrainer
 from arguments import ModelArguments, DataTrainingArguments
 
 logger = logging.getLogger(__name__)
-
+#wandb.init(project="glm2")
 def main():
     parser = HfArgumentParser((ModelArguments, DataTrainingArguments, Seq2SeqTrainingArguments))
     if len(sys.argv) == 2 and sys.argv[1].endswith(".json"):
@@ -54,8 +57,15 @@ def main():
         model_args, data_args, training_args = parser.parse_json_file(json_file=os.path.abspath(sys.argv[1]))
     else:
         model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+        # print("====================================")
+        # print(model_args.)
+        # print("========================================")
+        # print(training_args)
+        # print("====================================")
 
-    # Setup logging
+
+
+    #Setup logging
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%m/%d/%Y %H:%M:%S",
@@ -78,7 +88,7 @@ def main():
         f"Process rank: {training_args.local_rank}, device: {training_args.device}, n_gpu: {training_args.n_gpu}"
         + f"distributed training: {bool(training_args.local_rank != -1)}, 16-bits training: {training_args.fp16}"
     )
-    logger.info(f"Training/evaluation parameters {training_args}")
+    # logger.info(f"Training/evaluation parameters {training_args}")
 
     # Set seed before initializing model.
     set_seed(training_args.seed)
@@ -134,6 +144,7 @@ def main():
         model = model.float()
 
     prefix = data_args.source_prefix if data_args.source_prefix is not None else ""
+    print("prefix: " + prefix)
 
     # Preprocessing the datasets.
     # We need to tokenize inputs and targets.
@@ -157,17 +168,22 @@ def main():
 
     def preprocess_function_eval(examples):
         inputs, targets = [], []
+        #print("examples: "+examples)
         for i in range(len(examples[prompt_column])):
             if examples[prompt_column][i] and examples[response_column][i]:
                 query = examples[prompt_column][i]
+                #query = examples[prompt_column][i]
                 history = examples[history_column][i] if history_column is not None else None
                 prompt = tokenizer.build_prompt(query, history)
-                inputs.append(prompt)
+                inputs.append(query)
+                print("query: \n" + query)
                 targets.append(examples[response_column][i])
 
         inputs = [prefix + inp for inp in inputs]
+        print("inputs" + inputs[0])
         model_inputs = tokenizer(inputs, max_length=data_args.max_source_length, truncation=True, padding=True)
         labels = tokenizer(text_target=targets, max_length=max_target_length, truncation=True)
+        #print("labels: " + labels)
 
         if data_args.ignore_pad_token_for_loss:
             labels["input_ids"] = [
@@ -219,6 +235,7 @@ def main():
         print("labels", tokenizer.decode(example["labels"]))
 
     if training_args.do_train:
+
         if "train" not in raw_datasets:
             raise ValueError("--do_train requires a train dataset")
         train_dataset = raw_datasets["train"]
@@ -273,6 +290,7 @@ def main():
                 desc="Running tokenizer on prediction dataset",
             )
         print_dataset_example(predict_dataset[0])
+
 
     # Data collator
     label_pad_token_id = -100 if data_args.ignore_pad_token_for_loss else tokenizer.pad_token_id
@@ -340,6 +358,23 @@ def main():
 
     # Training
     if training_args.do_train:
+        #config = SimpleNamespace(model_args,data_args,training_args)
+        #wandb.login(key="9569466236d58fe00201ef34e081268912df3789")
+        wandb.login()
+        wandb.init(project="glm2",
+                   job_type="training",
+                   config={
+                       "learning_rate":training_args.learning_rate,
+                       "train_batch_size":training_args.train_batch_size,
+                       "pre_seq_leg":model_args.pre_seq_len,
+                       "max_source_length":data_args.max_source_length,
+                       "max_target_length":data_args.max_target_length,
+                       "max_steps":data_args.max_steps,
+                      # "epochs": model_args.,
+                   })
+        # wandb.config.update(training_args)
+        # wandb.config.update(model_args)
+        # wandb.config.update(data_args)
         checkpoint = None
         if training_args.resume_from_checkpoint is not None:
             checkpoint = training_args.resume_from_checkpoint
@@ -349,8 +384,11 @@ def main():
         model.enable_input_require_grads()
         train_result = trainer.train(resume_from_checkpoint=checkpoint)
         # trainer.save_model()  # Saves the tokenizer too for easy upload
-
+        print("train_result",type(train_result))
+        print(train_result)
         metrics = train_result.metrics
+        print("metric type",type(metrics))
+        print(metrics)
         max_train_samples = (
             data_args.max_train_samples if data_args.max_train_samples is not None else len(train_dataset)
         )
@@ -359,6 +397,8 @@ def main():
         trainer.log_metrics("train", metrics)
         trainer.save_metrics("train", metrics)
         trainer.save_state()
+        wandb.log(metrics)
+        wandb.finish()
 
     # Evaluation
     results = {}
@@ -374,7 +414,14 @@ def main():
 
     if training_args.do_predict:
         logger.info("*** Predict ***")
+        wandb.login(key="9569466236d58fe00201ef34e081268912df3789")
+        wandb.init(project="glm2",
+                   job_type="training")
+        wandb.config.update(training_args)
+        wandb.config.update(model_args)
+        wandb.config.update(data_args)
         predict_results = trainer.predict(predict_dataset, metric_key_prefix="predict", max_length=max_seq_length, do_sample=True, top_p=0.7, temperature=0.95)
+        # print("predict_results: %s"%predict_results[0])
         metrics = predict_results.metrics
         max_predict_samples = (
             data_args.max_predict_samples if data_args.max_predict_samples is not None else len(predict_dataset)
@@ -394,11 +441,15 @@ def main():
                     predict_results.label_ids, skip_special_tokens=True, clean_up_tokenization_spaces=True
                 )
                 labels = [label.strip() for label in labels]
-                output_prediction_file = os.path.join(training_args.output_dir, "generated_predictions.txt")
+                run_date = time.strftime('%Y-%m-%d_%H-%M-%S', time.localtime(time.time()))
+                output_prediction_file = os.path.join(training_args.output_dir, "generated_predictions%s.txt"%run_date)
+                table = wandb.Table(columns=["lables", "generation"])
                 with open(output_prediction_file, "w", encoding="utf-8") as writer:
                     for p, l in zip(predictions, labels):
-                        res = json.dumps({"labels": l, "predict": p}, ensure_ascii=False)
+                        table.add_data(l, p)
+                        res = json.dumps({"labels": p, "predict": l}, ensure_ascii=False)
                         writer.write(f"{res}\n")
+                wandb.log({'predict_generations': table})
     return results
 
 

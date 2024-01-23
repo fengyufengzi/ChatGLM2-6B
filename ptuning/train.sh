@@ -1,28 +1,34 @@
-PRE_SEQ_LEN=128
-LR=2e-2
+PRE_SEQ_LEN=128  #128,
+LR=1e-4
 NUM_GPUS=1
 
 torchrun --standalone --nnodes=1 --nproc-per-node=$NUM_GPUS main.py \
     --do_train \
-    --train_file AdvertiseGen/train.json \
-    --validation_file AdvertiseGen/dev.json \
-    --preprocessing_num_workers 10 \
-    --prompt_column content \
-    --response_column summary \
+    --train_file ../data/train.json \
+    --validation_file ../data/val.json \
+    --test_file ../data/val.json \
+    --preprocessing_num_workers 1 \
+    --prompt_column query \
+    --response_column answer \
     --overwrite_cache \
-    --model_name_or_path THUDM/chatglm2-6b \
-    --output_dir output/adgen-chatglm2-6b-pt-$PRE_SEQ_LEN-$LR \
+    --model_name_or_path /home/ubuntu/Documents/ai/model/chatglm2-6b \
+    --output_dir output/adgen-chatglm2-6b-pt-$PRE_SEQ_LEN-$LR-2 \
     --overwrite_output_dir \
     --max_source_length 64 \
-    --max_target_length 128 \
+    --max_target_length 256 \
     --per_device_train_batch_size 1 \
-    --per_device_eval_batch_size 1 \
+    --per_device_eval_batch_size 4 \
     --gradient_accumulation_steps 16 \
     --predict_with_generate \
-    --max_steps 3000 \
+    --max_steps 2000 \
     --logging_steps 10 \
-    --save_steps 1000 \
+    --save_steps 700 \
     --learning_rate $LR \
     --pre_seq_len $PRE_SEQ_LEN \
-    --quantization_bit 4
+    --quantization_bit=8 \
+    --report_to wandb \
+    --source_prefix [支付宝专用]请用最简洁的语言回答如下问题: \
+    #
+    #
+
 

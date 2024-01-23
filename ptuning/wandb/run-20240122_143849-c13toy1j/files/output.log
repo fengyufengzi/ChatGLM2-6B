@@ -1,0 +1,129 @@
+
+01/22/2024 14:38:52 - WARNING - transformers_modules.chatglm2-6b.modeling_chatglm - `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1786] 2024-01-22 14:38:52,547 >> ***** Running training *****
+[INFO|trainer.py:1787] 2024-01-22 14:38:52,547 >>   Num examples = 10
+[INFO|trainer.py:1788] 2024-01-22 14:38:52,547 >>   Num Epochs = 3,000
+[INFO|trainer.py:1789] 2024-01-22 14:38:52,547 >>   Instantaneous batch size per device = 1
+[INFO|trainer.py:1790] 2024-01-22 14:38:52,547 >>   Total train batch size (w. parallel, distributed & accumulation) = 16
+[INFO|trainer.py:1791] 2024-01-22 14:38:52,547 >>   Gradient Accumulation steps = 16
+[INFO|trainer.py:1792] 2024-01-22 14:38:52,547 >>   Total optimization steps = 3,000
+[INFO|trainer.py:1793] 2024-01-22 14:38:52,547 >>   Number of trainable parameters = 1,835,008
+[INFO|integrations.py:727] 2024-01-22 14:38:52,574 >> Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+  0%|                                                                                                    | 0/3000 [00:00<?, ?it/s]/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+  0%|                                                                                          | 1/3000 [00:03<2:57:44,  3.56s/it]
+  0%|                                                                                          | 2/3000 [00:05<2:02:54,  2.46s/it][INFO|configuration_utils.py:458] 2024-01-22 14:38:57,826 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-2/config.json
+[INFO|configuration_utils.py:364] 2024-01-22 14:38:57,826 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-2/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:38:57,831 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-2/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:38:57,831 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-2/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:38:57,831 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-2/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+  0%|                                                                                          | 3/3000 [00:06<1:32:55,  1.86s/it]
+  0%|                                                                                          | 4/3000 [00:09<1:51:47,  2.24s/it][INFO|configuration_utils.py:458] 2024-01-22 14:39:01,791 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-4/config.json
+[INFO|configuration_utils.py:364] 2024-01-22 14:39:01,792 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-4/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:39:01,797 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-4/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:39:01,797 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-4/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:39:01,797 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-4/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+  0%|▏                                                                                         | 6/3000 [00:12<1:32:21,  1.85s/it][INFO|configuration_utils.py:458] 2024-01-22 14:39:04,631 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-6/config.json
+[INFO|configuration_utils.py:364] 2024-01-22 14:39:04,631 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-6/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:39:04,636 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-6/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:39:04,636 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-6/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:39:04,637 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-6/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+Saving PrefixEncoder
+Saving PrefixEncoder
+  0%|▏                                                                                         | 8/3000 [00:14<1:16:36,  1.54s/it][INFO|configuration_utils.py:458] 2024-01-22 14:39:07,472 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-8/config.json
+[INFO|configuration_utils.py:364] 2024-01-22 14:39:07,473 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-8/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:39:07,477 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-8/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:39:07,477 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-8/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:39:07,477 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-8/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+{'loss': 1.4962, 'learning_rate': 0.0009966666666666668, 'epoch': 6.4}
+Saving PrefixEncoder
+  0%|▎                                                                                        | 10/3000 [00:18<1:24:19,  1.69s/it][INFO|configuration_utils.py:458] 2024-01-22 14:39:11,442 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-10/config.json
+[INFO|configuration_utils.py:364] 2024-01-22 14:39:11,442 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-10/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:39:11,447 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-10/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:39:11,447 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-10/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:39:11,447 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-10/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+  0%|▎                                                                                        | 11/3000 [00:20<1:24:36,  1.70s/it]
+  0%|▎                                                                                        | 12/3000 [00:23<1:41:36,  2.04s/it][INFO|configuration_utils.py:458] 2024-01-22 14:39:15,976 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-12/config.json
+[INFO|configuration_utils.py:364] 2024-01-22 14:39:15,976 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-12/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:39:15,981 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-12/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:39:15,981 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-12/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:39:15,981 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-12/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+  0%|▍                                                                                        | 13/3000 [00:26<1:53:37,  2.28s/it]
+  0%|▍                                                                                        | 14/3000 [00:27<1:44:45,  2.10s/it][INFO|configuration_utils.py:458] 2024-01-22 14:39:20,517 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-14/config.json
+[INFO|configuration_utils.py:364] 2024-01-22 14:39:20,517 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-14/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:39:20,521 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-14/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:39:20,522 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-14/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:39:20,522 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-14/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+  0%|▍                                                                                        | 15/3000 [00:29<1:30:26,  1.82s/it]
+  1%|▍                                                                                        | 16/3000 [00:31<1:45:27,  2.12s/it][INFO|configuration_utils.py:458] 2024-01-22 14:39:24,486 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-16/config.json
+[INFO|configuration_utils.py:364] 2024-01-22 14:39:24,486 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-16/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:39:24,491 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-16/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:39:24,491 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-16/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:39:24,491 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-16/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+  1%|▌                                                                                        | 17/3000 [00:32<1:22:25,  1.66s/it]
+  1%|▌                                                                                        | 18/3000 [00:34<1:31:21,  1.84s/it][INFO|configuration_utils.py:458] 2024-01-22 14:39:27,326 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-18/config.json
+[INFO|configuration_utils.py:364] 2024-01-22 14:39:27,326 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-18/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:39:27,331 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-18/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:39:27,331 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-18/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:39:27,331 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-18/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+{'loss': 1.4527, 'learning_rate': 0.0009933333333333333, 'epoch': 13.0}
+Saving PrefixEncoder
+  1%|▌                                                                                        | 20/3000 [00:37<1:16:53,  1.55s/it][INFO|configuration_utils.py:458] 2024-01-22 14:39:30,168 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-20/config.json
+[INFO|configuration_utils.py:364] 2024-01-22 14:39:30,168 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-20/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:39:30,172 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-20/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:39:30,172 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-20/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:39:30,172 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-20/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+Saving PrefixEncoder
+  1%|▋                                                                                        | 22/3000 [00:41<1:24:04,  1.69s/it][INFO|configuration_utils.py:458] 2024-01-22 14:39:34,137 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-22/config.json
+[INFO|configuration_utils.py:364] 2024-01-22 14:39:34,137 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-22/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:39:34,142 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-22/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:39:34,142 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-22/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:39:34,142 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-22/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+  1%|▋                                                                                        | 23/3000 [00:43<1:24:18,  1.70s/it]
+  1%|▋                                                                                        | 24/3000 [00:46<1:41:00,  2.04s/it][INFO|configuration_utils.py:458] 2024-01-22 14:39:38,672 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-24/config.json
+[INFO|configuration_utils.py:364] 2024-01-22 14:39:38,672 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-24/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:39:38,677 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-24/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:39:38,677 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-24/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:39:38,677 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-24/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+  1%|▋                                                                                        | 25/3000 [00:48<1:52:57,  2.28s/it]
+  1%|▊                                                                                        | 26/3000 [00:50<1:44:13,  2.10s/it][INFO|configuration_utils.py:458] 2024-01-22 14:39:43,207 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-26/config.json
+[INFO|configuration_utils.py:364] 2024-01-22 14:39:43,207 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-26/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:39:43,212 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-26/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:39:43,212 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-26/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:39:43,212 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-26/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+  1%|▊                                                                                        | 27/3000 [00:51<1:29:57,  1.82s/it]
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+[INFO|configuration_utils.py:364] 2024-01-22 14:39:47,180 >> Configuration saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-28/generation_config.json
+[INFO|modeling_utils.py:1853] 2024-01-22 14:39:47,184 >> Model weights saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-28/pytorch_model.bin
+[INFO|tokenization_utils_base.py:2194] 2024-01-22 14:39:47,185 >> tokenizer config file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-28/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2201] 2024-01-22 14:39:47,185 >> Special tokens file saved in output/adgen-chatglm2-6b-pt-128-1e-3/checkpoint-28/special_tokens_map.json
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(

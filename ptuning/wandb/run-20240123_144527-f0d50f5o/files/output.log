@@ -1,0 +1,45 @@
+[INFO|trainer.py:3200] 2024-01-23 14:45:34,581 >> ***** Running Prediction *****
+[INFO|trainer.py:3202] 2024-01-23 14:45:34,581 >>   Num examples = 14
+[INFO|trainer.py:3205] 2024-01-23 14:45:34,581 >>   Batch size = 4
+[INFO|configuration_utils.py:577] 2024-01-23 14:45:34,583 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  0%|                                                                                                       | 0/4 [00:00<?, ?it/s][INFO|configuration_utils.py:577] 2024-01-23 14:45:40,176 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 50%|███████████████████████████████████████████████▌                                               | 2/4 [00:06<00:06,  3.20s/it][INFO|configuration_utils.py:577] 2024-01-23 14:45:46,573 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 75%|███████████████████████████████████████████████████████████████████████▎                       | 3/4 [00:18<00:06,  6.96s/it][INFO|configuration_utils.py:577] 2024-01-23 14:45:58,794 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:22<00:00,  5.75s/it]Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.275 seconds.
+Prefix dict has been built successfully.
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:22<00:00,  5.66s/it]
+01/23/2024 14:46:02 - DEBUG - jieba - Building prefix dict from the default dictionary ...
+01/23/2024 14:46:02 - DEBUG - jieba - Loading model from cache /tmp/jieba.cache
+01/23/2024 14:46:02 - DEBUG - jieba - Loading model cost 0.275 seconds.
+01/23/2024 14:46:02 - DEBUG - jieba - Prefix dict has been built successfully.
+***** predict metrics *****
+  predict_bleu-4             =     3.3131
+  predict_rouge-1            =     20.838
+  predict_rouge-2            =     4.1523
+  predict_rouge-l            =    15.1397
+  predict_runtime            = 0:00:28.24
+  predict_samples            =         14
+  predict_samples_per_second =      0.496
+  predict_steps_per_second   =      0.142
