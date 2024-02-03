@@ -48,6 +48,15 @@ from trainer_seq2seq import Seq2SeqTrainer
 from arguments import ModelArguments, DataTrainingArguments
 
 logger = logging.getLogger(__name__)
+query_template = """
+问：湖北高考成绩会发短信吗？
+答：不会。可自行在网上查询。
+问：长沙在读大学生落户有补贴吗？
+答：长沙在读大学生落户没有补贴，本科及以上大学生毕业之后落户长沙且在长沙工作符合相关条件的可以申领租房和生活补贴。
+问：青岛市老年人高龄补贴标准是多少？
+答：对不起，根据参考资料无法回答。
+问：{}
+答："""
 #wandb.init(project="glm2")
 def main():
     parser = HfArgumentParser((ModelArguments, DataTrainingArguments, Seq2SeqTrainingArguments))
@@ -63,8 +72,18 @@ def main():
         # print(training_args)
         # print("====================================")
 
-
-
+    wandb.login()
+    wandb.init(project="glm2",
+               job_type="training",
+               config={
+                   "learning_rate": training_args.learning_rate,
+                   "train_batch_size": training_args.train_batch_size,
+                   "pre_seq_leg": model_args.pre_seq_len,
+                   "max_source_length": data_args.max_source_length,
+                   "max_target_length": data_args.max_target_length,
+                   # "max_steps":data_args.,
+                   # "epochs": model_args.,
+               })
     #Setup logging
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
@@ -122,6 +141,7 @@ def main():
     if model_args.ptuning_checkpoint is not None:
         # Evaluation
         # Loading extra state dict of prefix encoder
+        print("loading checkpoint:",model_args.ptuning_checkpoint)
         model = AutoModel.from_pretrained(model_args.model_name_or_path, config=config, trust_remote_code=True)
         prefix_state_dict = torch.load(os.path.join(model_args.ptuning_checkpoint, "pytorch_model.bin"))
         new_prefix_state_dict = {}
@@ -171,12 +191,13 @@ def main():
         #print("examples: "+examples)
         for i in range(len(examples[prompt_column])):
             if examples[prompt_column][i] and examples[response_column][i]:
-                query = examples[prompt_column][i]
+
+                query = query_template.format(examples[prompt_column][i])
                 #query = examples[prompt_column][i]
                 history = examples[history_column][i] if history_column is not None else None
                 prompt = tokenizer.build_prompt(query, history)
                 inputs.append(query)
-                print("query: \n" + query)
+                # print("query: \n" + query)
                 targets.append(examples[response_column][i])
 
         inputs = [prefix + inp for inp in inputs]
@@ -258,6 +279,7 @@ def main():
         if "validation" not in raw_datasets:
             raise ValueError("--do_eval requires a validation dataset")
         eval_dataset = raw_datasets["validation"]
+        print("eval dataset:",eval_dataset)
         if data_args.max_eval_samples is not None:
             max_eval_samples = min(len(eval_dataset), data_args.max_eval_samples)
             eval_dataset = eval_dataset.select(range(max_eval_samples))
@@ -323,7 +345,13 @@ def main():
             hypothesis = list(jieba.cut(pred))
             reference = list(jieba.cut(label))
             rouge = Rouge()
-            scores = rouge.get_scores(' '.join(hypothesis) , ' '.join(reference))
+            hypothesis = ' '.join(hypothesis)
+            reference = ' '.join(reference)
+            if not hypothesis.strip() or not reference.strip():
+                continue
+            scores = rouge.get_scores(hypothesis, reference)
+            # scores = rouge.get_scores(' '.join(hypothesis) , ' '.join(reference))
+
             result = scores[0]
             
             for k, v in result.items():
@@ -360,35 +388,25 @@ def main():
     if training_args.do_train:
         #config = SimpleNamespace(model_args,data_args,training_args)
         #wandb.login(key="9569466236d58fe00201ef34e081268912df3789")
-        wandb.login()
-        wandb.init(project="glm2",
-                   job_type="training",
-                   config={
-                       "learning_rate":training_args.learning_rate,
-                       "train_batch_size":training_args.train_batch_size,
-                       "pre_seq_leg":model_args.pre_seq_len,
-                       "max_source_length":data_args.max_source_length,
-                       "max_target_length":data_args.max_target_length,
-                       "max_steps":data_args.max_steps,
-                      # "epochs": model_args.,
-                   })
+
         # wandb.config.update(training_args)
         # wandb.config.update(model_args)
         # wandb.config.update(data_args)
         checkpoint = None
         if training_args.resume_from_checkpoint is not None:
             checkpoint = training_args.resume_from_checkpoint
+            print("checkpoint:" + checkpoint)
         # elif last_checkpoint is not None:
         #     checkpoint = last_checkpoint
         model.gradient_checkpointing_enable()
         model.enable_input_require_grads()
         train_result = trainer.train(resume_from_checkpoint=checkpoint)
         # trainer.save_model()  # Saves the tokenizer too for easy upload
-        print("train_result",type(train_result))
-        print(train_result)
+        # print("train_result",type(train_result))
+        # print(train_result)
         metrics = train_result.metrics
-        print("metric type",type(metrics))
-        print(metrics)
+        # print("metric type",type(metrics))
+        # print(metrics)
         max_train_samples = (
             data_args.max_train_samples if data_args.max_train_samples is not None else len(train_dataset)
         )
@@ -398,7 +416,7 @@ def main():
         trainer.save_metrics("train", metrics)
         trainer.save_state()
         wandb.log(metrics)
-        wandb.finish()
+        # wandb.finish()
 
     # Evaluation
     results = {}
@@ -411,15 +429,26 @@ def main():
 
         trainer.log_metrics("eval", metrics)
         trainer.save_metrics("eval", metrics)
+        wandb.log({"eval_metrics":metrics})
 
     if training_args.do_predict:
         logger.info("*** Predict ***")
-        wandb.login(key="9569466236d58fe00201ef34e081268912df3789")
-        wandb.init(project="glm2",
-                   job_type="training")
-        wandb.config.update(training_args)
-        wandb.config.update(model_args)
-        wandb.config.update(data_args)
+        # wandb.login()#
+        # wandb.init(project="glm2",
+        #            job_type="training",
+        #            # name="zhifubao-test1",
+        #            config={
+        #                "learning_rate": training_args.learning_rate,
+        #                "train_batch_size": training_args.train_batch_size,
+        #                "pre_seq_leg": model_args.pre_seq_len,
+        #                "max_source_length": data_args.max_source_length,
+        #                "max_target_length": data_args.max_target_length,
+        #                # "max_steps":data_args.,
+        #                # "epochs": model_args.,
+        #            })
+        # wandb.config.update(training_args)
+        # wandb.config.update(model_args)
+        # wandb.config.update(data_args)
         predict_results = trainer.predict(predict_dataset, metric_key_prefix="predict", max_length=max_seq_length, do_sample=True, top_p=0.7, temperature=0.95)
         # print("predict_results: %s"%predict_results[0])
         metrics = predict_results.metrics
@@ -427,10 +456,12 @@ def main():
             data_args.max_predict_samples if data_args.max_predict_samples is not None else len(predict_dataset)
         )
         metrics["predict_samples"] = min(max_predict_samples, len(predict_dataset))
+        print("number os predict_samples:", metrics["predict_samples"])
 
         trainer.log_metrics("predict", metrics)
         trainer.save_metrics("predict", metrics)
-
+        wandb.log({"predict_metrics": metrics})
+        query = [prefix+query_template.format(qur) for qur in raw_datasets["test"][prompt_column]]
         if trainer.is_world_process_zero():
             if training_args.predict_with_generate:
                 predictions = tokenizer.batch_decode(
@@ -443,15 +474,16 @@ def main():
                 labels = [label.strip() for label in labels]
                 run_date = time.strftime('%Y-%m-%d_%H-%M-%S', time.localtime(time.time()))
                 output_prediction_file = os.path.join(training_args.output_dir, "generated_predictions%s.txt"%run_date)
-                table = wandb.Table(columns=["lables", "generation"])
+                table = wandb.Table(columns=["query","lables", "generation"])
                 with open(output_prediction_file, "w", encoding="utf-8") as writer:
-                    for p, l in zip(predictions, labels):
-                        table.add_data(l, p)
-                        res = json.dumps({"labels": p, "predict": l}, ensure_ascii=False)
+                    for q, p, l in zip(query,predictions, labels):
+                        table.add_data(q, l, p)
+                        res = json.dumps({"query": q, "labels": l, "predict": p}, ensure_ascii=False)
                         writer.write(f"{res}\n")
                 wandb.log({'predict_generations': table})
+        # wandb.finish()
     return results
-
+    wandb.finish()
 
 def _mp_fn(index):
     # For xla_spawn (TPUs)

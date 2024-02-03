@@ -1,0 +1,1 @@
+{"eval/rouge-1": 20.429124999999996, "eval/rouge-2": 4.217085, "eval/rouge-l": 15.798155000000003, "eval/bleu-4": 4.945125, "eval/runtime": 31.2721, "eval/samples_per_second": 0.64, "eval/steps_per_second": 0.16, "train/global_step": 0, "_timestamp": 1706880753.437154, "_runtime": 45.75702095031738, "_step": 1, "_wandb": {"runtime": 41}}

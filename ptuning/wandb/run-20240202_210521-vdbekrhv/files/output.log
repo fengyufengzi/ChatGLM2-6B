@@ -1,0 +1,296 @@
+
+02/02/2024 21:05:26 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/datasets/load.py:2483: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+[INFO|configuration_utils.py:667] 2024-02-02 21:05:27,209 >> loading configuration file /data/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:667] 2024-02-02 21:05:27,212 >> loading configuration file /data/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:725] 2024-02-02 21:05:27,213 >> Model config ChatGLMConfig {
+  "_name_or_path": "/data/ai/model/chatglm2-6b",
+  "add_bias_linear": false,
+  "add_qkv_bias": true,
+  "apply_query_key_layer_scaling": true,
+  "apply_residual_connection_post_layernorm": false,
+  "architectures": [
+    "ChatGLMModel"
+  ],
+  "attention_dropout": 0.0,
+  "attention_softmax_in_fp32": true,
+  "auto_map": {
+    "AutoConfig": "configuration_chatglm.ChatGLMConfig",
+    "AutoModel": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForCausalLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSeq2SeqLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSequenceClassification": "modeling_chatglm.ChatGLMForSequenceClassification"
+  },
+  "bias_dropout_fusion": true,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "ffn_hidden_size": 13696,
+  "fp32_residual_connection": false,
+  "hidden_dropout": 0.0,
+  "hidden_size": 4096,
+  "kv_channels": 128,
+  "layernorm_epsilon": 1e-05,
+  "model_type": "chatglm",
+  "multi_query_attention": true,
+  "multi_query_group_num": 2,
+  "num_attention_heads": 32,
+  "num_layers": 28,
+  "original_rope": true,
+  "pad_token_id": 0,
+  "padded_vocab_size": 65024,
+  "post_layer_norm": true,
+  "pre_seq_len": null,
+  "prefix_projection": false,
+  "quantization_bit": 0,
+  "rmsnorm": true,
+  "seq_length": 32768,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.30.2",
+  "use_cache": true,
+  "vocab_size": 65024
+}
+[INFO|tokenization_utils_base.py:1821] 2024-02-02 21:05:27,214 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:1821] 2024-02-02 21:05:27,214 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:1821] 2024-02-02 21:05:27,214 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:1821] 2024-02-02 21:05:27,214 >> loading file tokenizer_config.json
+[INFO|modeling_utils.py:2575] 2024-02-02 21:05:27,259 >> loading weights file /data/ai/model/chatglm2-6b/pytorch_model.bin.index.json
+[INFO|configuration_utils.py:577] 2024-02-02 21:05:27,260 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+
+
+Loading checkpoint shards:  57%|█████████████████████████████████████████████████████▋                                        | 4/7 [00:06<00:03,  1.28s/it]
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:08<00:00,  1.27s/it]
+[INFO|modeling_utils.py:3295] 2024-02-02 21:05:36,144 >> All model checkpoint weights were used when initializing ChatGLMForConditionalGeneration.
+[WARNING|modeling_utils.py:3297] 2024-02-02 21:05:36,144 >> Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /data/ai/model/chatglm2-6b and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[INFO|modeling_utils.py:2927] 2024-02-02 21:05:36,145 >> Generation config file not found, using a generation config created from the model config.
+prefix:
+inputs什么是蚂蚁庄园
+input_ids [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64790, 64792, 30910, 35318, 41069, 46980]
+inputs 什么是蚂蚁庄园
+label_ids [64790, 64792, 30910, 41069, 46980, 41680, 33053, 39063, 32488, 39330, 38346, 35439, 32033, 31155]
+labels 蚂蚁庄园是一款基于支付宝支付行为的农场养成游戏。
+02/02/2024 21:05:39 - INFO - __main__ - *** Evaluate ***
+Running tokenizer on validation dataset: 100%|███████████████████████████████████████████████████████████████████| 315/315 [00:00<00:00, 8514.90 examples/s]
+[INFO|trainer.py:577] 2024-02-02 21:05:39,617 >> max_steps is given, it will override any value given in num_train_epochs
+[INFO|trainer.py:3200] 2024-02-02 21:05:39,620 >> ***** Running Evaluation *****
+[INFO|trainer.py:3202] 2024-02-02 21:05:39,620 >>   Num examples = 315
+[INFO|trainer.py:3205] 2024-02-02 21:05:39,620 >>   Batch size = 4
+[INFO|configuration_utils.py:577] 2024-02-02 21:05:39,622 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  0%|                                                                                                                                | 0/79 [00:00<?, ?it/s][INFO|configuration_utils.py:577] 2024-02-02 21:05:47,849 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  3%|███                                                                                                                     | 2/79 [00:13<08:42,  6.79s/it][INFO|configuration_utils.py:577] 2024-02-02 21:06:01,425 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  4%|████▌                                                                                                                   | 3/79 [00:28<12:41, 10.02s/it][INFO|configuration_utils.py:577] 2024-02-02 21:06:15,970 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  5%|██████                                                                                                                  | 4/79 [00:50<18:08, 14.51s/it][INFO|configuration_utils.py:577] 2024-02-02 21:06:38,034 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  6%|███████▌                                                                                                                | 5/79 [00:57<14:59, 12.15s/it][INFO|configuration_utils.py:577] 2024-02-02 21:06:45,756 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  8%|█████████                                                                                                               | 6/79 [01:19<18:46, 15.43s/it][INFO|configuration_utils.py:577] 2024-02-02 21:07:07,782 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  9%|██████████▋                                                                                                             | 7/79 [01:42<21:12, 17.68s/it][INFO|configuration_utils.py:577] 2024-02-02 21:07:30,210 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 10%|████████████▏                                                                                                           | 8/79 [02:04<22:33, 19.06s/it][INFO|configuration_utils.py:577] 2024-02-02 21:07:52,274 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 11%|█████████████▋                                                                                                          | 9/79 [02:15<19:26, 16.67s/it][INFO|configuration_utils.py:577] 2024-02-02 21:08:03,622 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 13%|███████████████                                                                                                        | 10/79 [02:32<19:11, 16.68s/it][INFO|configuration_utils.py:577] 2024-02-02 21:08:20,334 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 14%|████████████████▌                                                                                                      | 11/79 [02:55<20:57, 18.50s/it][INFO|configuration_utils.py:577] 2024-02-02 21:08:42,972 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 15%|██████████████████                                                                                                     | 12/79 [03:17<21:59, 19.70s/it][INFO|configuration_utils.py:577] 2024-02-02 21:09:05,417 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 16%|███████████████████▌                                                                                                   | 13/79 [03:23<17:10, 15.61s/it][INFO|configuration_utils.py:577] 2024-02-02 21:09:11,603 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 18%|█████████████████████                                                                                                  | 14/79 [03:46<19:14, 17.76s/it][INFO|configuration_utils.py:577] 2024-02-02 21:09:34,351 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 19%|██████████████████████▌                                                                                                | 15/79 [03:52<15:14, 14.28s/it][INFO|configuration_utils.py:577] 2024-02-02 21:09:40,559 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 20%|████████████████████████                                                                                               | 16/79 [04:12<16:40, 15.87s/it][INFO|configuration_utils.py:577] 2024-02-02 21:10:00,128 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 22%|█████████████████████████▌                                                                                             | 17/79 [04:34<18:30, 17.91s/it][INFO|configuration_utils.py:577] 2024-02-02 21:10:22,790 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 23%|███████████████████████████                                                                                            | 18/79 [04:56<19:22, 19.06s/it][INFO|configuration_utils.py:577] 2024-02-02 21:10:44,512 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 24%|████████████████████████████▌                                                                                          | 19/79 [05:05<16:00, 16.01s/it][INFO|configuration_utils.py:577] 2024-02-02 21:10:53,403 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 25%|██████████████████████████████▏                                                                                        | 20/79 [05:21<15:41, 15.96s/it][INFO|configuration_utils.py:577] 2024-02-02 21:11:09,273 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 27%|███████████████████████████████▋                                                                                       | 21/79 [05:43<17:11, 17.78s/it][INFO|configuration_utils.py:577] 2024-02-02 21:11:31,284 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 28%|█████████████████████████████████▏                                                                                     | 22/79 [05:58<16:08, 16.98s/it][INFO|configuration_utils.py:577] 2024-02-02 21:11:46,409 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 29%|██████████████████████████████████▋                                                                                    | 23/79 [06:20<17:17, 18.52s/it][INFO|configuration_utils.py:577] 2024-02-02 21:12:08,530 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/linecache.py", line 136, in updatecache
+    with tokenize.open(fullname) as fp:
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/tokenize.py", line 398, in open
+    text = TextIOWrapper(buffer, encoding, line_buffering=True)
+KeyboardInterrupt
+Original exception was:
+Traceback (most recent call last):
+  File "/data/ai/ChatGLM2-6B/ptuning/main.py", line 480, in <module>
+  File "/data/ai/ChatGLM2-6B/ptuning/main.py", line 413, in main
+    logger.info("*** Evaluate ***")
+  File "/data/ai/ChatGLM2-6B/ptuning/trainer_seq2seq.py", line 79, in evaluate
+    return super().evaluate(eval_dataset, ignore_keys=ignore_keys, metric_key_prefix=metric_key_prefix)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/trainer.py", line 3053, in evaluate
+    output = eval_loop(
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/trainer.py", line 3245, in evaluation_loop
+    loss, logits, labels = self.prediction_step(model, inputs, prediction_loss_only, ignore_keys=ignore_keys)
+  File "/data/ai/ChatGLM2-6B/ptuning/trainer_seq2seq.py", line 203, in prediction_step
+    generated_tokens = self.model.generate(**gen_kwargs)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/generation/utils.py", line 1572, in generate
+    return self.sample(
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/generation/utils.py", line 2619, in sample
+    outputs = self(
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/.cache/huggingface/modules/transformers_modules/chatglm2-6b/modeling_chatglm.py", line 931, in forward
+    transformer_outputs = self.transformer(
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/.cache/huggingface/modules/transformers_modules/chatglm2-6b/modeling_chatglm.py", line 824, in forward
+    hidden_states, presents, all_hidden_states, all_self_attentions = self.encoder(
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/.cache/huggingface/modules/transformers_modules/chatglm2-6b/modeling_chatglm.py", line 634, in forward
+    layer_ret = layer(
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/.cache/huggingface/modules/transformers_modules/chatglm2-6b/modeling_chatglm.py", line 538, in forward
+    attention_output, kv_cache = self.self_attention(
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/.cache/huggingface/modules/transformers_modules/chatglm2-6b/modeling_chatglm.py", line 437, in forward
+    context_layer = self.core_attention(query_layer, key_layer, value_layer, attention_mask)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/.cache/huggingface/modules/transformers_modules/chatglm2-6b/modeling_chatglm.py", line 221, in forward
+    query_layer, key_layer, value_layer = [k.permute(1, 2, 0, 3) for k in [query_layer, key_layer, value_layer]]
+  File "/home/ubuntu/.cache/huggingface/modules/transformers_modules/chatglm2-6b/modeling_chatglm.py", line 221, in <listcomp>
+    query_layer, key_layer, value_layer = [k.permute(1, 2, 0, 3) for k in [query_layer, key_layer, value_layer]]
+KeyboardInterrupt

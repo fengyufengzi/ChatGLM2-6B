@@ -1,0 +1,305 @@
+2024-02-03 22:16:30,005 INFO    StreamThr :817411 [internal.py:wandb_internal():86] W&B internal server running at pid: 817411, started at: 2024-02-03 22:16:30.004998
+2024-02-03 22:16:30,007 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status
+2024-02-03 22:16:30,008 INFO    WriterThread:817411 [datastore.py:open_for_write():87] open: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/run-hozotybc.wandb
+2024-02-03 22:16:30,008 DEBUG   SenderThread:817411 [sender.py:send():382] send: header
+2024-02-03 22:16:30,010 DEBUG   SenderThread:817411 [sender.py:send():382] send: run
+2024-02-03 22:16:31,038 INFO    SenderThread:817411 [dir_watcher.py:__init__():211] watching files in: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files
+2024-02-03 22:16:31,038 INFO    SenderThread:817411 [sender.py:_start_run_threads():1136] run started: hozotybc with start time 1706969790.004948
+2024-02-03 22:16:31,052 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: check_version
+2024-02-03 22:16:31,052 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: check_version
+2024-02-03 22:16:34,391 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: run_start
+2024-02-03 22:16:34,401 DEBUG   HandlerThread:817411 [system_info.py:__init__():27] System info init
+2024-02-03 22:16:34,401 DEBUG   HandlerThread:817411 [system_info.py:__init__():42] System info init done
+2024-02-03 22:16:34,401 INFO    HandlerThread:817411 [system_monitor.py:start():194] Starting system monitor
+2024-02-03 22:16:34,401 INFO    SystemMonitor:817411 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-02-03 22:16:34,401 INFO    HandlerThread:817411 [system_monitor.py:probe():214] Collecting system info
+2024-02-03 22:16:34,401 INFO    SystemMonitor:817411 [interfaces.py:start():190] Started cpu monitoring
+2024-02-03 22:16:34,402 INFO    SystemMonitor:817411 [interfaces.py:start():190] Started disk monitoring
+2024-02-03 22:16:34,402 INFO    SystemMonitor:817411 [interfaces.py:start():190] Started gpu monitoring
+2024-02-03 22:16:34,403 INFO    SystemMonitor:817411 [interfaces.py:start():190] Started memory monitoring
+2024-02-03 22:16:34,403 INFO    SystemMonitor:817411 [interfaces.py:start():190] Started network monitoring
+2024-02-03 22:16:34,409 DEBUG   HandlerThread:817411 [system_info.py:probe():151] Probing system
+2024-02-03 22:16:34,410 DEBUG   HandlerThread:817411 [system_info.py:_probe_git():136] Probing git
+2024-02-03 22:16:34,413 DEBUG   HandlerThread:817411 [system_info.py:_probe_git():144] Probing git done
+2024-02-03 22:16:34,413 DEBUG   HandlerThread:817411 [system_info.py:probe():199] Probing system done
+2024-02-03 22:16:34,413 DEBUG   HandlerThread:817411 [system_monitor.py:probe():223] {'os': 'Linux-6.5.0-15-generic-x86_64-with-glibc2.35', 'python': '3.10.13', 'heartbeatAt': '2024-02-03T14:16:34.409060', 'startedAt': '2024-02-03T14:16:30.000437', 'docker': None, 'cuda': None, 'args': ('--do_eval', '--do_predict', '--train_file', '../data/train.json', '--validation_file', '../data/val.json', '--test_file', '../data/val_less.json', '--preprocessing_num_workers', '1', '--prompt_column', 'query', '--response_column', 'answer', '--overwrite_cache', '--model_name_or_path', '/data/ai/model/chatglm2-6b', '--output_dir', 'output/adgen-chatglm2-6b-pt-128-1e-4', '--overwrite_output_dir', '--max_source_length', '256', '--max_target_length', '512', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '16', '--predict_with_generate', '--max_steps', '2100', '--logging_steps', '10', '--save_steps', '700', '--learning_rate', '1e-4', '--pre_seq_len', '128', '--quantization_bit=8', '--report_to', 'wandb', '--max_eval_samples', '20', '--ptuning_checkpoint', '/data/ai/ChatGLM2-6B/ptuning/output/adgen-chatglm2-6b-pt-128-1e-4/checkpoint-700', '--source_prefix', "你是蚂蚁金服公司的客服人员,用清晰简洁的语言回答老年人的问题.如果因为知识库受限无法回答,只需回答'对不起，根据参考资料无法回答'\n\n    "), 'state': 'running', 'program': '/data/ai/ChatGLM2-6B/ptuning/main.py', 'codePathLocal': 'main.py', 'codePath': 'ptuning/main.py', 'git': {'remote': 'https://github.com/fengyufengzi/ChatGLM2-6B.git', 'commit': '284cb911a1f58200ef887669fc0b863d782e28db'}, 'email': '4328521+fengyufengzi@users.noreply.github.com', 'root': '/data/ai/ChatGLM2-6B', 'host': 'marsen-linux', 'username': 'ubuntu', 'executable': '/home/ubuntu/miniconda3/envs/chatglm2/bin/python', 'cpu_count': 24, 'cpu_count_logical': 32, 'cpu_freq': {'current': 2661.3100937500003, 'min': 800.0, 'max': 4937.5}, 'cpu_freq_per_core': [{'current': 5500.0, 'min': 800.0, 'max': 5500.0}, {'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 3862.162, 'min': 800.0, 'max': 5500.0}, {'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 5500.675, 'min': 800.0, 'max': 5500.0}, {'current': 4939.533, 'min': 800.0, 'max': 5500.0}, {'current': 5500.0, 'min': 800.0, 'max': 5500.0}, {'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 1100.114, 'min': 800.0, 'max': 5800.0}, {'current': 5400.694, 'min': 800.0, 'max': 5800.0}, {'current': 5499.822, 'min': 800.0, 'max': 5800.0}, {'current': 5487.209, 'min': 800.0, 'max': 5800.0}, {'current': 4548.723, 'min': 800.0, 'max': 5500.0}, {'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 5500.0, 'min': 800.0, 'max': 5500.0}, {'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 1352.771, 'min': 800.0, 'max': 4300.0}, {'current': 1099.09, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 1110.66, 'min': 800.0, 'max': 4300.0}, {'current': 4298.947, 'min': 800.0, 'max': 4300.0}, {'current': 4301.115, 'min': 800.0, 'max': 4300.0}, {'current': 4288.308, 'min': 800.0, 'max': 4300.0}, {'current': 1178.531, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 4293.569, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}], 'disk': {'/': {'total': 182.2801628112793, 'used': 26.725711822509766}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}], 'memory': {'total': 62.557525634765625}}
+2024-02-03 22:16:34,413 INFO    HandlerThread:817411 [system_monitor.py:probe():224] Finished collecting system info
+2024-02-03 22:16:34,413 INFO    HandlerThread:817411 [system_monitor.py:probe():227] Publishing system info
+2024-02-03 22:16:34,413 DEBUG   HandlerThread:817411 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-02-03 22:16:35,040 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_created():271] file/dir created: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/conda-environment.yaml
+2024-02-03 22:16:35,344 DEBUG   HandlerThread:817411 [system_info.py:_save_conda():220] Saving conda packages done
+2024-02-03 22:16:35,345 INFO    HandlerThread:817411 [system_monitor.py:probe():229] Finished publishing system info
+2024-02-03 22:16:35,345 DEBUG   SenderThread:817411 [sender.py:send():382] send: files
+2024-02-03 22:16:35,346 INFO    SenderThread:817411 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-02-03 22:16:35,346 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:16:35,348 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: python_packages
+2024-02-03 22:16:35,349 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-03 22:16:35,349 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-03 22:16:35,349 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: python_packages
+2024-02-03 22:16:35,349 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: stop_status
+2024-02-03 22:16:36,040 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/conda-environment.yaml
+2024-02-03 22:16:36,040 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_created():271] file/dir created: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/requirements.txt
+2024-02-03 22:16:36,040 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_created():271] file/dir created: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/wandb-metadata.json
+2024-02-03 22:16:36,112 DEBUG   SenderThread:817411 [sender.py:send():382] send: telemetry
+2024-02-03 22:16:36,386 INFO    wandb-upload_0:817411 [upload_job.py:push():131] Uploaded file /tmp/tmpvrjclrs3wandb/hlp3nnpf-wandb-metadata.json
+2024-02-03 22:16:37,040 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_created():271] file/dir created: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:16:39,041 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:16:40,592 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:16:41,042 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:16:46,187 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:16:47,044 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:16:49,045 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:16:50,349 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-03 22:16:50,349 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: stop_status
+2024-02-03 22:16:50,350 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-03 22:16:52,012 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:16:53,045 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:16:57,046 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:16:57,190 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:17:02,191 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:17:03,047 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/config.yaml
+2024-02-03 22:17:05,349 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-03 22:17:05,349 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: stop_status
+2024-02-03 22:17:05,350 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-03 22:17:07,705 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:17:11,048 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:17:13,328 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:17:17,050 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:17:19,050 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:17:19,071 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:17:20,374 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-03 22:17:20,374 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-03 22:17:20,375 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: stop_status
+2024-02-03 22:17:20,440 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: partial_history
+2024-02-03 22:17:20,441 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: partial_history
+2024-02-03 22:17:20,618 DEBUG   SenderThread:817411 [sender.py:send():382] send: config
+2024-02-03 22:17:20,618 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,618 DEBUG   SenderThread:817411 [sender.py:send():382] send: telemetry
+2024-02-03 22:17:20,618 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,618 WARNING SenderThread:817411 [sender.py:send_metric():1354] Seen metric with glob (shouldn't happen)
+2024-02-03 22:17:20,618 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,618 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,618 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,618 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,618 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,618 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,619 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,619 DEBUG   SenderThread:817411 [sender.py:send():382] send: history
+2024-02-03 22:17:20,619 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: summary_record
+2024-02-03 22:17:20,619 INFO    SenderThread:817411 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-03 22:17:20,619 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,619 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,619 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,619 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,619 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,619 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,619 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,619 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:20,619 DEBUG   SenderThread:817411 [sender.py:send():382] send: history
+2024-02-03 22:17:20,619 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: summary_record
+2024-02-03 22:17:20,620 INFO    SenderThread:817411 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-03 22:17:21,050 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_created():271] file/dir created: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/wandb-summary.json
+2024-02-03 22:17:23,051 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:17:24,620 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:17:29,773 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:17:31,052 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:17:34,403 DEBUG   SystemMonitor:817411 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-02-03 22:17:34,404 DEBUG   SenderThread:817411 [sender.py:send():382] send: stats
+2024-02-03 22:17:35,358 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-03 22:17:35,360 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:17:35,374 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-03 22:17:37,117 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: stop_status
+2024-02-03 22:17:38,053 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/config.yaml
+2024-02-03 22:17:39,053 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:17:42,360 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:17:47,360 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:17:50,358 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-03 22:17:50,359 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: stop_status
+2024-02-03 22:17:50,374 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-03 22:17:52,593 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:17:56,516 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: partial_history
+2024-02-03 22:17:56,517 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:56,517 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:56,517 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:56,517 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:56,517 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:56,517 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:56,517 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:56,517 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:56,517 DEBUG   SenderThread:817411 [sender.py:send():382] send: history
+2024-02-03 22:17:56,517 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: summary_record
+2024-02-03 22:17:56,517 INFO    SenderThread:817411 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-03 22:17:57,057 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/wandb-summary.json
+2024-02-03 22:17:58,061 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: log_artifact
+2024-02-03 22:17:58,062 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: log_artifact
+2024-02-03 22:17:58,961 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: partial_history
+2024-02-03 22:17:58,996 INFO    SenderThread:817411 [sender.py:send_request_log_artifact():1470] logged artifact run-hozotybc-predict_generations - {'id': 'QXJ0aWZhY3Q6NzEyOTM0Mzk3', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEzNjgyNjc3Nw==', 'latestArtifact': None}}
+2024-02-03 22:17:58,997 DEBUG   SenderThread:817411 [sender.py:send():382] send: files
+2024-02-03 22:17:58,997 INFO    SenderThread:817411 [sender.py:_save_file():1403] saving file media/table/predict_generations_3_d62a656354911322b166.table.json with policy now
+2024-02-03 22:17:58,997 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:17:58,998 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:58,998 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:58,998 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:58,999 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:58,999 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:58,999 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:58,999 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:58,999 DEBUG   SenderThread:817411 [sender.py:send():382] send: metric
+2024-02-03 22:17:58,999 DEBUG   SenderThread:817411 [sender.py:send():382] send: history
+2024-02-03 22:17:59,000 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: summary_record
+2024-02-03 22:17:59,000 INFO    SenderThread:817411 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-03 22:17:59,001 DEBUG   SenderThread:817411 [sender.py:send():382] send: exit
+2024-02-03 22:17:59,001 INFO    SenderThread:817411 [sender.py:send_exit():589] handling exit code: 0
+2024-02-03 22:17:59,001 INFO    SenderThread:817411 [sender.py:send_exit():591] handling runtime: 84
+2024-02-03 22:17:59,001 INFO    SenderThread:817411 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-03 22:17:59,002 INFO    SenderThread:817411 [sender.py:send_exit():597] send defer
+2024-02-03 22:17:59,002 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:17:59,002 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 0
+2024-02-03 22:17:59,006 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:17:59,006 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-02-03 22:17:59,007 INFO    SenderThread:817411 [sender.py:transition_state():617] send defer: 1
+2024-02-03 22:17:59,007 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:17:59,007 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 1
+2024-02-03 22:17:59,007 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:17:59,007 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-02-03 22:17:59,007 INFO    SenderThread:817411 [sender.py:transition_state():617] send defer: 2
+2024-02-03 22:17:59,007 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:17:59,007 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 2
+2024-02-03 22:17:59,007 INFO    HandlerThread:817411 [system_monitor.py:finish():203] Stopping system monitor
+2024-02-03 22:17:59,008 INFO    HandlerThread:817411 [interfaces.py:finish():202] Joined cpu monitor
+2024-02-03 22:17:59,008 INFO    HandlerThread:817411 [interfaces.py:finish():202] Joined disk monitor
+2024-02-03 22:17:59,009 DEBUG   SystemMonitor:817411 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-02-03 22:17:59,009 DEBUG   SystemMonitor:817411 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-02-03 22:17:59,055 INFO    HandlerThread:817411 [interfaces.py:finish():202] Joined gpu monitor
+2024-02-03 22:17:59,056 INFO    HandlerThread:817411 [interfaces.py:finish():202] Joined memory monitor
+2024-02-03 22:17:59,056 INFO    HandlerThread:817411 [interfaces.py:finish():202] Joined network monitor
+2024-02-03 22:17:59,056 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:17:59,056 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-02-03 22:17:59,056 INFO    SenderThread:817411 [sender.py:transition_state():617] send defer: 3
+2024-02-03 22:17:59,056 DEBUG   SenderThread:817411 [sender.py:send():382] send: stats
+2024-02-03 22:17:59,056 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:17:59,056 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 3
+2024-02-03 22:17:59,056 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:17:59,056 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-02-03 22:17:59,056 INFO    SenderThread:817411 [sender.py:transition_state():617] send defer: 4
+2024-02-03 22:17:59,056 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:17:59,056 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 4
+2024-02-03 22:17:59,056 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:17:59,056 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-02-03 22:17:59,056 INFO    SenderThread:817411 [sender.py:transition_state():617] send defer: 5
+2024-02-03 22:17:59,056 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:17:59,056 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 5
+2024-02-03 22:17:59,057 DEBUG   SenderThread:817411 [sender.py:send():382] send: summary
+2024-02-03 22:17:59,057 INFO    SenderThread:817411 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-03 22:17:59,057 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:17:59,057 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-02-03 22:17:59,057 INFO    SenderThread:817411 [sender.py:transition_state():617] send defer: 6
+2024-02-03 22:17:59,057 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:17:59,057 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 6
+2024-02-03 22:17:59,057 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:17:59,057 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-02-03 22:17:59,058 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:17:59,059 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:17:59,059 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/wandb-summary.json
+2024-02-03 22:17:59,059 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_created():271] file/dir created: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/media/table/predict_generations_3_d62a656354911322b166.table.json
+2024-02-03 22:17:59,059 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_created():271] file/dir created: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/media
+2024-02-03 22:17:59,059 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_created():271] file/dir created: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/media/table
+2024-02-03 22:17:59,607 INFO    wandb-upload_1:817411 [upload_job.py:push():131] Uploaded file /tmp/tmpvrjclrs3wandb/uv118ccu-media/table/predict_generations_3_d62a656354911322b166.table.json
+2024-02-03 22:17:59,813 INFO    SenderThread:817411 [sender.py:transition_state():617] send defer: 7
+2024-02-03 22:17:59,813 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:17:59,813 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 7
+2024-02-03 22:17:59,813 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:17:59,813 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-02-03 22:17:59,976 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-03 22:18:00,059 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/config.yaml
+2024-02-03 22:18:00,312 INFO    wandb-upload_1:817411 [upload_job.py:push():131] Uploaded file /tmp/tmpvrjclrs3wandb/zqg5ddn4-media/table/predict_generations_3_d62a656354911322b166.table.json
+2024-02-03 22:18:01,367 INFO    wandb-upload_0:817411 [upload_job.py:push():89] Uploaded file /home/ubuntu/.local/share/wandb/artifacts/staging/tmp7r6zvlra
+2024-02-03 22:18:02,199 INFO    SenderThread:817411 [sender.py:transition_state():617] send defer: 8
+2024-02-03 22:18:02,200 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: poll_exit
+2024-02-03 22:18:02,200 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:18:02,200 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 8
+2024-02-03 22:18:02,201 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:18:02,201 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-02-03 22:18:02,201 INFO    SenderThread:817411 [job_builder.py:build():296] Attempting to build job artifact
+2024-02-03 22:18:02,203 INFO    SenderThread:817411 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-02-03 22:18:02,205 INFO    SenderThread:817411 [job_builder.py:build():402] adding wandb-job metadata file
+2024-02-03 22:18:02,218 INFO    SenderThread:817411 [sender.py:transition_state():617] send defer: 9
+2024-02-03 22:18:02,219 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:18:02,219 DEBUG   SenderThread:817411 [sender.py:send():382] send: artifact
+2024-02-03 22:18:02,219 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 9
+2024-02-03 22:18:02,978 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-03 22:18:03,061 INFO    Thread-12 :817411 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:18:04,388 INFO    SenderThread:817411 [sender.py:send_artifact():1494] sent artifact job-https___github.com_fengyufengzi_ChatGLM2-6B.git_ptuning_main.py - {'id': 'QXJ0aWZhY3Q6NzEyOTA4NzQz', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEzMzAxOTg0NA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NzEyOTA4NzQz', 'versionIndex': 10}}}
+2024-02-03 22:18:04,388 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:18:04,388 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: status_report
+2024-02-03 22:18:04,388 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-02-03 22:18:04,388 INFO    SenderThread:817411 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-02-03 22:18:05,062 INFO    SenderThread:817411 [dir_watcher.py:finish():388] scan: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files
+2024-02-03 22:18:05,062 INFO    SenderThread:817411 [dir_watcher.py:finish():402] scan save: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/conda-environment.yaml conda-environment.yaml
+2024-02-03 22:18:05,062 INFO    SenderThread:817411 [dir_watcher.py:finish():402] scan save: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log output.log
+2024-02-03 22:18:05,062 INFO    SenderThread:817411 [dir_watcher.py:finish():402] scan save: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/wandb-metadata.json wandb-metadata.json
+2024-02-03 22:18:05,062 INFO    SenderThread:817411 [dir_watcher.py:finish():402] scan save: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/config.yaml config.yaml
+2024-02-03 22:18:05,064 INFO    SenderThread:817411 [dir_watcher.py:finish():402] scan save: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/requirements.txt requirements.txt
+2024-02-03 22:18:05,065 INFO    SenderThread:817411 [dir_watcher.py:finish():402] scan save: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/wandb-summary.json wandb-summary.json
+2024-02-03 22:18:05,067 INFO    SenderThread:817411 [dir_watcher.py:finish():402] scan save: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/media/table/predict_generations_3_d62a656354911322b166.table.json media/table/predict_generations_3_d62a656354911322b166.table.json
+2024-02-03 22:18:05,067 INFO    SenderThread:817411 [sender.py:transition_state():617] send defer: 10
+2024-02-03 22:18:05,067 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: poll_exit
+2024-02-03 22:18:05,067 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:18:05,067 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 10
+2024-02-03 22:18:05,067 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:18:05,067 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-02-03 22:18:05,067 INFO    SenderThread:817411 [file_pusher.py:finish():175] shutting down file pusher
+2024-02-03 22:18:05,659 INFO    wandb-upload_0:817411 [upload_job.py:push():131] Uploaded file /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/output.log
+2024-02-03 22:18:05,749 INFO    wandb-upload_1:817411 [upload_job.py:push():131] Uploaded file /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/conda-environment.yaml
+2024-02-03 22:18:05,828 INFO    wandb-upload_2:817411 [upload_job.py:push():131] Uploaded file /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/config.yaml
+2024-02-03 22:18:05,979 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-03 22:18:05,980 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: poll_exit
+2024-02-03 22:18:06,097 INFO    wandb-upload_3:817411 [upload_job.py:push():131] Uploaded file /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/requirements.txt
+2024-02-03 22:18:06,659 INFO    wandb-upload_4:817411 [upload_job.py:push():131] Uploaded file /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/files/wandb-summary.json
+2024-02-03 22:18:06,860 INFO    Thread-11 (_thread_body):817411 [sender.py:transition_state():617] send defer: 11
+2024-02-03 22:18:06,861 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:18:06,861 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 11
+2024-02-03 22:18:06,862 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:18:06,862 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-02-03 22:18:06,862 INFO    SenderThread:817411 [file_pusher.py:join():181] waiting for file pusher
+2024-02-03 22:18:06,862 INFO    SenderThread:817411 [sender.py:transition_state():617] send defer: 12
+2024-02-03 22:18:06,862 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:18:06,862 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 12
+2024-02-03 22:18:06,863 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:18:06,863 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-02-03 22:18:06,863 INFO    SenderThread:817411 [file_stream.py:finish():595] file stream finish called
+2024-02-03 22:18:06,981 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-03 22:18:07,591 INFO    SenderThread:817411 [file_stream.py:finish():599] file stream finish is done
+2024-02-03 22:18:07,591 INFO    SenderThread:817411 [sender.py:transition_state():617] send defer: 13
+2024-02-03 22:18:07,591 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: poll_exit
+2024-02-03 22:18:07,591 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:18:07,591 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 13
+2024-02-03 22:18:07,591 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:18:07,591 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-02-03 22:18:07,591 INFO    SenderThread:817411 [sender.py:transition_state():617] send defer: 14
+2024-02-03 22:18:07,591 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: defer
+2024-02-03 22:18:07,591 INFO    HandlerThread:817411 [handler.py:handle_request_defer():172] handle defer: 14
+2024-02-03 22:18:07,592 DEBUG   SenderThread:817411 [sender.py:send():382] send: final
+2024-02-03 22:18:07,592 DEBUG   SenderThread:817411 [sender.py:send():382] send: footer
+2024-02-03 22:18:07,592 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: defer
+2024-02-03 22:18:07,592 INFO    SenderThread:817411 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-02-03 22:18:07,592 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-03 22:18:07,592 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-03 22:18:07,592 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: server_info
+2024-02-03 22:18:07,592 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: get_summary
+2024-02-03 22:18:07,592 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: poll_exit
+2024-02-03 22:18:07,593 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: poll_exit
+2024-02-03 22:18:07,593 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: server_info
+2024-02-03 22:18:07,593 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: sampled_history
+2024-02-03 22:18:07,594 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-03 22:18:07,594 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: job_info
+2024-02-03 22:18:08,467 DEBUG   SenderThread:817411 [sender.py:send_request():409] send_request: job_info
+2024-02-03 22:18:08,467 INFO    MainThread:817411 [wandb_run.py:_footer_history_summary_info():3857] rendering history
+2024-02-03 22:18:08,468 INFO    MainThread:817411 [wandb_run.py:_footer_history_summary_info():3889] rendering summary
+2024-02-03 22:18:08,468 INFO    MainThread:817411 [wandb_run.py:_footer_sync_info():3816] logging synced files
+2024-02-03 22:18:08,469 DEBUG   HandlerThread:817411 [handler.py:handle_request():146] handle_request: shutdown
+2024-02-03 22:18:08,469 INFO    HandlerThread:817411 [handler.py:finish():869] shutting down handler
+2024-02-03 22:18:08,594 INFO    WriterThread:817411 [datastore.py:close():296] close: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240203_221630-hozotybc/run-hozotybc.wandb
+2024-02-03 22:18:09,467 INFO    SenderThread:817411 [sender.py:finish():1572] shutting down sender
+2024-02-03 22:18:09,468 INFO    SenderThread:817411 [file_pusher.py:finish():175] shutting down file pusher
+2024-02-03 22:18:09,468 INFO    SenderThread:817411 [file_pusher.py:join():181] waiting for file pusher

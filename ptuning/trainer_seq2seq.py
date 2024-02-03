@@ -15,6 +15,7 @@
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 import torch
+import wandb
 from torch import nn
 from torch.utils.data import Dataset
 
@@ -245,3 +246,22 @@ class Seq2SeqTrainer(PrefixTrainer):
         )
         padded_tensor[:, : tensor.shape[-1]] = tensor
         return padded_tensor
+    # def _maybe_log_save_evaluate(self, tr_loss, model, trial, epoch, ignore_keys_for_eval):
+    #     if self.control.should_log:
+    #         logs: Dict[str, float] = {}
+    #
+    #         # all_gather + mean() to get average loss over all processes
+    #         tr_loss_scalar = self._nested_gather(tr_loss).mean().item()
+    #
+    #         # reset tr_loss to zero
+    #
+    #         wandbloss = round(tr_loss_scalar / (self.state.global_step - self._globalstep_last_logged), 4)
+    #         wandblr = self._get_learning_rate()
+    #         wandb.log({"loss":wandbloss,"learning_rate":wandblr,"epoch":epoch })
+    #
+    #     return super()._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+
+
+
+
+

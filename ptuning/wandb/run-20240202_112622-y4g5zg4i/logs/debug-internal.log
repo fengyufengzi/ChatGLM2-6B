@@ -1,0 +1,675 @@
+2024-02-02 11:26:22,565 INFO    StreamThr :308936 [internal.py:wandb_internal():86] W&B internal server running at pid: 308936, started at: 2024-02-02 11:26:22.564931
+2024-02-02 11:26:22,567 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status
+2024-02-02 11:26:22,567 INFO    WriterThread:308936 [datastore.py:open_for_write():87] open: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/run-y4g5zg4i.wandb
+2024-02-02 11:26:22,568 DEBUG   SenderThread:308936 [sender.py:send():382] send: header
+2024-02-02 11:26:22,569 DEBUG   SenderThread:308936 [sender.py:send():382] send: run
+2024-02-02 11:26:25,493 INFO    SenderThread:308936 [dir_watcher.py:__init__():211] watching files in: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files
+2024-02-02 11:26:25,493 INFO    SenderThread:308936 [sender.py:_start_run_threads():1136] run started: y4g5zg4i with start time 1706844382.56501
+2024-02-02 11:26:25,502 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: check_version
+2024-02-02 11:26:25,502 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: check_version
+2024-02-02 11:26:27,732 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:26:27,741 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: run_start
+2024-02-02 11:26:27,751 DEBUG   HandlerThread:308936 [system_info.py:__init__():27] System info init
+2024-02-02 11:26:27,751 DEBUG   HandlerThread:308936 [system_info.py:__init__():42] System info init done
+2024-02-02 11:26:27,751 INFO    HandlerThread:308936 [system_monitor.py:start():194] Starting system monitor
+2024-02-02 11:26:27,752 INFO    SystemMonitor:308936 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-02-02 11:26:27,753 INFO    HandlerThread:308936 [system_monitor.py:probe():214] Collecting system info
+2024-02-02 11:26:27,755 INFO    SystemMonitor:308936 [interfaces.py:start():190] Started cpu monitoring
+2024-02-02 11:26:27,756 INFO    SystemMonitor:308936 [interfaces.py:start():190] Started disk monitoring
+2024-02-02 11:26:27,757 INFO    SystemMonitor:308936 [interfaces.py:start():190] Started gpu monitoring
+2024-02-02 11:26:27,758 INFO    SystemMonitor:308936 [interfaces.py:start():190] Started memory monitoring
+2024-02-02 11:26:27,759 INFO    SystemMonitor:308936 [interfaces.py:start():190] Started network monitoring
+2024-02-02 11:26:27,778 DEBUG   HandlerThread:308936 [system_info.py:probe():151] Probing system
+2024-02-02 11:26:27,780 DEBUG   HandlerThread:308936 [system_info.py:_probe_git():136] Probing git
+2024-02-02 11:26:27,785 DEBUG   HandlerThread:308936 [system_info.py:_probe_git():144] Probing git done
+2024-02-02 11:26:27,785 DEBUG   HandlerThread:308936 [system_info.py:probe():199] Probing system done
+2024-02-02 11:26:27,785 DEBUG   HandlerThread:308936 [system_monitor.py:probe():223] {'os': 'Linux-6.5.0-15-generic-x86_64-with-glibc2.35', 'python': '3.10.13', 'heartbeatAt': '2024-02-02T03:26:27.778379', 'startedAt': '2024-02-02T03:26:22.562912', 'docker': None, 'cuda': None, 'args': ('--do_eval', '--train_file', '../data/train.json', '--validation_file', '../data/val.json', '--test_file', '../data/val_less.json', '--preprocessing_num_workers', '1', '--prompt_column', 'query', '--response_column', 'answer', '--overwrite_cache', '--model_name_or_path', '/data/ai/model/chatglm2-6b', '--output_dir', 'output/adgen-chatglm2-6b-pt-128-1e-4', '--overwrite_output_dir', '--max_source_length', '128', '--max_target_length', '256', '--per_device_train_batch_size', '1', '--per_device_eval_batch_size', '4', '--gradient_accumulation_steps', '16', '--predict_with_generate', '--max_steps', '2100', '--logging_steps', '10', '--save_steps', '700', '--learning_rate', '1e-4', '--pre_seq_len', '128', '--quantization_bit=8', '--report_to', 'wandb'), 'state': 'running', 'program': '/data/ai/ChatGLM2-6B/ptuning/main.py', 'codePathLocal': 'main.py', 'codePath': 'ptuning/main.py', 'git': {'remote': 'https://github.com/fengyufengzi/ChatGLM2-6B.git', 'commit': '284cb911a1f58200ef887669fc0b863d782e28db'}, 'email': '4328521+fengyufengzi@users.noreply.github.com', 'root': '/data/ai/ChatGLM2-6B', 'host': 'marsen-linux', 'username': 'ubuntu', 'executable': '/home/ubuntu/miniconda3/envs/chatglm2/bin/python', 'cpu_count': 24, 'cpu_count_logical': 32, 'cpu_freq': {'current': 1118.61815625, 'min': 800.0, 'max': 4937.5}, 'cpu_freq_per_core': [{'current': 1128.432, 'min': 800.0, 'max': 5500.0}, {'current': 1196.635, 'min': 800.0, 'max': 5500.0}, {'current': 1431.957, 'min': 800.0, 'max': 5500.0}, {'current': 1107.723, 'min': 800.0, 'max': 5500.0}, {'current': 1102.925, 'min': 800.0, 'max': 5500.0}, {'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 1120.738, 'min': 800.0, 'max': 5500.0}, {'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 1101.501, 'min': 800.0, 'max': 5800.0}, {'current': 800.0, 'min': 800.0, 'max': 5800.0}, {'current': 1103.878, 'min': 800.0, 'max': 5800.0}, {'current': 1152.76, 'min': 800.0, 'max': 5800.0}, {'current': 1121.12, 'min': 800.0, 'max': 5500.0}, {'current': 1103.832, 'min': 800.0, 'max': 5500.0}, {'current': 1121.98, 'min': 800.0, 'max': 5500.0}, {'current': 800.0, 'min': 800.0, 'max': 5500.0}, {'current': 1152.284, 'min': 800.0, 'max': 4300.0}, {'current': 1109.406, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 1100.0, 'min': 800.0, 'max': 4300.0}, {'current': 800.0, 'min': 800.0, 'max': 4300.0}, {'current': 1473.391, 'min': 800.0, 'max': 4300.0}, {'current': 1098.214, 'min': 800.0, 'max': 4300.0}], 'disk': {'/': {'total': 182.2801628112793, 'used': 26.71417236328125}}, 'gpu': 'NVIDIA GeForce RTX 4090', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4090', 'memory_total': 25757220864}], 'memory': {'total': 62.557525634765625}}
+2024-02-02 11:26:27,786 INFO    HandlerThread:308936 [system_monitor.py:probe():224] Finished collecting system info
+2024-02-02 11:26:27,786 INFO    HandlerThread:308936 [system_monitor.py:probe():227] Publishing system info
+2024-02-02 11:26:27,786 DEBUG   HandlerThread:308936 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-02-02 11:26:28,494 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_created():271] file/dir created: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/conda-environment.yaml
+2024-02-02 11:26:28,792 DEBUG   HandlerThread:308936 [system_info.py:_save_conda():220] Saving conda packages done
+2024-02-02 11:26:28,792 INFO    HandlerThread:308936 [system_monitor.py:probe():229] Finished publishing system info
+2024-02-02 11:26:28,793 DEBUG   SenderThread:308936 [sender.py:send():382] send: files
+2024-02-02 11:26:28,793 INFO    SenderThread:308936 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-02-02 11:26:28,796 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: python_packages
+2024-02-02 11:26:28,796 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: python_packages
+2024-02-02 11:26:28,796 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:26:28,796 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:26:28,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:26:29,323 DEBUG   SenderThread:308936 [sender.py:send():382] send: telemetry
+2024-02-02 11:26:29,494 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/conda-environment.yaml
+2024-02-02 11:26:29,495 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_created():271] file/dir created: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:26:29,495 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_created():271] file/dir created: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/wandb-metadata.json
+2024-02-02 11:26:29,495 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_created():271] file/dir created: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/requirements.txt
+2024-02-02 11:26:31,495 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:26:33,015 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:26:33,381 INFO    wandb-upload_0:308936 [upload_job.py:push():131] Uploaded file /tmp/tmphhl4zytmwandb/yvn6tv7r-wandb-metadata.json
+2024-02-02 11:26:33,496 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:26:37,498 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:26:38,130 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:26:39,499 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:26:41,499 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:26:43,489 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:26:43,796 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:26:43,797 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:26:43,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:26:45,500 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:26:49,346 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:26:53,501 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:26:55,060 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:26:56,502 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/config.yaml
+2024-02-02 11:26:58,796 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:26:58,797 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:26:58,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:27:01,398 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:27:07,172 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:27:07,504 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:27:12,173 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:27:13,796 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:27:13,797 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:27:13,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:27:17,253 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:27:21,508 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:27:23,152 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:27:27,759 DEBUG   SystemMonitor:308936 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-02-02 11:27:27,760 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:27:28,760 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:27:28,797 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:27:28,797 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:27:28,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:27:34,346 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:27:39,347 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:27:41,513 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:27:43,797 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:27:43,797 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:27:43,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:27:44,735 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:27:49,515 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:27:49,884 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:27:54,885 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:27:57,760 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:27:58,797 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:27:58,797 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:27:58,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:28:00,459 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:28:05,459 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:28:11,248 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:28:11,520 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:28:13,797 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:28:13,797 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:28:13,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:28:16,346 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:28:21,347 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:28:26,347 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:28:27,761 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:28:28,797 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:28:28,797 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:28:28,840 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:28:31,524 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:28:31,604 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:28:36,605 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:28:41,605 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:28:43,797 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:28:43,797 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:28:43,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:28:47,451 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:28:52,968 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:28:53,530 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:28:57,761 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:28:58,761 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:28:58,797 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:28:58,797 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:28:58,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:29:03,532 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:29:03,780 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:29:08,781 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:29:13,781 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:29:13,797 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:29:13,797 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:29:13,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:29:19,536 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:29:19,608 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:29:24,609 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:29:27,761 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:29:28,797 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:29:28,798 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:29:28,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:29:30,351 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:29:35,352 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:29:40,976 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:29:41,541 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:29:43,797 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:29:43,798 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:29:43,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:29:46,507 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:29:51,507 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:29:56,508 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:29:57,762 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:29:58,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:29:58,798 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:29:58,840 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:30:02,344 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:30:03,547 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:30:08,291 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:30:10,548 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:30:13,291 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:30:13,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:30:13,798 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:30:13,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:30:18,396 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:30:23,397 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:30:27,762 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:30:28,655 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:30:28,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:30:28,798 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:30:28,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:30:30,552 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:30:34,322 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:30:36,553 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:30:39,629 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:30:43,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:30:43,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:30:43,799 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:30:45,251 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:30:50,251 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:30:55,264 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:30:56,556 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:30:57,807 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:30:58,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:30:58,798 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:30:58,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:31:00,286 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:31:05,287 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:31:10,287 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:31:13,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:31:13,798 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:31:13,840 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:31:15,640 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:31:16,560 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:31:20,641 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:31:25,641 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:31:27,763 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:31:28,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:31:28,798 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:31:28,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:31:31,256 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:31:37,004 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:31:38,564 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:31:42,005 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:31:43,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:31:43,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:31:43,799 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:31:46,565 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:31:47,612 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:31:52,613 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:31:57,613 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:31:57,763 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:31:58,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:31:58,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:31:58,799 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:32:02,568 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:32:02,728 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:32:07,729 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:32:12,729 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:32:13,798 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:32:13,799 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:32:13,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:32:18,413 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:32:22,572 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:32:24,096 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:32:27,763 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:32:28,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:32:28,799 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:32:28,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:32:29,223 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:32:34,223 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:32:38,574 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:32:39,664 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:32:43,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:32:43,799 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:32:43,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:32:45,281 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:32:50,281 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:32:55,282 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:32:57,764 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:32:58,577 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:32:58,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:32:58,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:32:58,799 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:33:00,460 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:33:05,461 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:33:10,484 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:33:10,579 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:33:13,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:33:13,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:33:13,799 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:33:16,442 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:33:21,443 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:33:26,444 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:33:27,764 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:33:28,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:33:28,799 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:33:28,840 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:33:31,656 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:33:32,583 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:33:36,657 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:33:41,657 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:33:43,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:33:43,799 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:33:43,840 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:33:47,420 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:33:52,587 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:33:53,220 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:33:57,764 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:33:58,765 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:33:58,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:33:58,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:33:58,800 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:34:04,429 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:34:09,429 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:34:13,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:34:13,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:34:13,800 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:34:14,436 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:34:14,590 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:34:19,437 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:34:24,437 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:34:27,765 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:34:28,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:34:28,800 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:34:28,840 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:34:30,391 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:34:34,594 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:34:35,952 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:34:40,953 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:34:43,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:34:43,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:34:43,800 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:34:46,355 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:34:51,396 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:34:52,597 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:34:56,396 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:34:57,765 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:34:58,799 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:34:58,800 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:34:58,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:35:01,468 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:35:06,599 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:35:07,196 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:35:12,197 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:35:13,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:35:13,800 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:35:13,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:35:17,517 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:35:22,518 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:35:26,603 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:35:27,766 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:35:27,767 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:35:28,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:35:28,800 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:35:28,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:35:33,547 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:35:36,605 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:35:39,116 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:35:42,606 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:35:43,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:35:43,800 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:35:43,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:35:44,324 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:35:48,607 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:35:49,616 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:35:54,617 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:35:57,766 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:35:58,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:35:58,800 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:35:58,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:35:59,647 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:36:04,647 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:36:08,610 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:36:09,984 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:36:13,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:36:13,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:36:13,801 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:36:15,547 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:36:20,547 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:36:25,548 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:36:27,766 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:36:28,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:36:28,800 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:36:28,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:36:30,614 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:36:31,546 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:36:36,546 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:36:41,546 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:36:43,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:36:43,800 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:36:43,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:36:44,616 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:36:47,285 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:36:52,286 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:36:57,286 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:36:57,866 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:36:58,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:36:58,800 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:36:58,844 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:37:02,487 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:37:06,619 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:37:08,160 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:37:13,161 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:37:13,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:37:13,801 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:37:13,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:37:18,644 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:37:23,645 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:37:26,623 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:37:27,767 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:37:28,768 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:37:28,800 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:37:28,801 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:37:28,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:37:34,218 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:37:39,218 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:37:43,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:37:43,801 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:37:43,844 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:37:45,201 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:37:48,627 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:37:50,884 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:37:55,885 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:37:57,768 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:37:58,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:37:58,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:37:58,801 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:38:01,837 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:38:06,838 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:38:10,631 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:38:12,265 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:38:13,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:38:13,801 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:38:13,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:38:17,853 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:38:22,853 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:38:27,768 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:38:28,769 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:38:28,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:38:28,801 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:38:28,844 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:38:32,635 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:38:34,714 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:38:38,636 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:38:40,428 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:38:43,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:38:43,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:38:43,801 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:38:46,428 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:38:51,428 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:38:56,429 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:38:57,768 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:38:58,832 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:38:58,832 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:38:58,832 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:39:00,640 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:39:02,384 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:39:07,385 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:39:12,480 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:39:12,642 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:39:13,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:39:13,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:39:13,802 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:39:17,859 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:39:22,859 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:39:27,769 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:39:28,769 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:39:28,801 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:39:28,801 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:39:28,844 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:39:33,844 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:39:34,646 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:39:38,845 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:39:42,647 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:39:43,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:39:43,802 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:39:43,803 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:39:45,234 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:39:50,234 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:39:55,235 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:39:57,769 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:39:58,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:39:58,802 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:39:58,848 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:40:00,595 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:40:04,650 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:40:05,812 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:40:10,813 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:40:13,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:40:13,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:40:13,802 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:40:16,358 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:40:20,653 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:40:21,956 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:40:26,957 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:40:27,769 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:40:28,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:40:28,802 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:40:28,803 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:40:32,009 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:40:37,010 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:40:42,328 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:40:42,657 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:40:43,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:40:43,802 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:40:43,803 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:40:47,693 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:40:52,693 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:40:57,694 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:40:57,770 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:40:58,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:40:58,802 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:40:58,844 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:41:02,661 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:41:03,688 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:41:08,688 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:41:13,689 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:41:13,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:41:13,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:41:13,803 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:41:19,615 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:41:24,665 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:41:25,060 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:41:27,770 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:41:28,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:41:28,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:41:28,803 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:41:30,482 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:41:35,483 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:41:38,667 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:41:40,667 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:41:40,812 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:41:43,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:41:43,803 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:41:43,803 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:41:46,288 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:41:46,668 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:41:51,289 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:41:56,289 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:41:57,770 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:41:58,802 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:41:58,803 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:41:58,803 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:42:01,407 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:42:04,671 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:42:07,272 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:42:12,273 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:42:13,803 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:42:13,803 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:42:13,804 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:42:17,330 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:42:18,674 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:42:22,372 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:42:26,675 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:42:27,771 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:42:27,771 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:42:28,803 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-02 11:42:28,803 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: stop_status
+2024-02-02 11:42:28,804 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:42:32,617 DEBUG   SenderThread:308936 [sender.py:send():382] send: exit
+2024-02-02 11:42:32,617 INFO    SenderThread:308936 [sender.py:send_exit():589] handling exit code: 255
+2024-02-02 11:42:32,617 INFO    SenderThread:308936 [sender.py:send_exit():591] handling runtime: 964
+2024-02-02 11:42:32,618 INFO    SenderThread:308936 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-02 11:42:32,618 INFO    SenderThread:308936 [sender.py:send_exit():597] send defer
+2024-02-02 11:42:32,618 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:32,619 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 0
+2024-02-02 11:42:32,619 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:32,619 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-02-02 11:42:32,619 INFO    SenderThread:308936 [sender.py:transition_state():617] send defer: 1
+2024-02-02 11:42:32,620 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:32,620 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 1
+2024-02-02 11:42:32,620 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:32,620 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-02-02 11:42:32,620 INFO    SenderThread:308936 [sender.py:transition_state():617] send defer: 2
+2024-02-02 11:42:32,621 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:32,621 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 2
+2024-02-02 11:42:32,621 INFO    HandlerThread:308936 [system_monitor.py:finish():203] Stopping system monitor
+2024-02-02 11:42:32,622 DEBUG   SystemMonitor:308936 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-02-02 11:42:32,622 DEBUG   SystemMonitor:308936 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-02-02 11:42:32,624 INFO    HandlerThread:308936 [interfaces.py:finish():202] Joined cpu monitor
+2024-02-02 11:42:32,624 INFO    HandlerThread:308936 [interfaces.py:finish():202] Joined disk monitor
+2024-02-02 11:42:32,657 INFO    HandlerThread:308936 [interfaces.py:finish():202] Joined gpu monitor
+2024-02-02 11:42:32,657 INFO    HandlerThread:308936 [interfaces.py:finish():202] Joined memory monitor
+2024-02-02 11:42:32,657 INFO    HandlerThread:308936 [interfaces.py:finish():202] Joined network monitor
+2024-02-02 11:42:32,657 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:32,657 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-02-02 11:42:32,657 INFO    SenderThread:308936 [sender.py:transition_state():617] send defer: 3
+2024-02-02 11:42:32,657 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:32,657 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 3
+2024-02-02 11:42:32,657 DEBUG   SenderThread:308936 [sender.py:send():382] send: stats
+2024-02-02 11:42:32,657 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:32,657 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-02-02 11:42:32,657 INFO    SenderThread:308936 [sender.py:transition_state():617] send defer: 4
+2024-02-02 11:42:32,658 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:32,658 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 4
+2024-02-02 11:42:32,658 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:32,658 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-02-02 11:42:32,658 INFO    SenderThread:308936 [sender.py:transition_state():617] send defer: 5
+2024-02-02 11:42:32,658 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:32,658 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 5
+2024-02-02 11:42:32,658 DEBUG   SenderThread:308936 [sender.py:send():382] send: summary
+2024-02-02 11:42:32,658 INFO    SenderThread:308936 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-02 11:42:32,658 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:32,658 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-02-02 11:42:32,658 INFO    SenderThread:308936 [sender.py:transition_state():617] send defer: 6
+2024-02-02 11:42:32,658 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:32,658 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 6
+2024-02-02 11:42:32,658 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:32,658 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-02-02 11:42:32,658 INFO    SenderThread:308936 [sender.py:transition_state():617] send defer: 7
+2024-02-02 11:42:32,658 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:42:32,659 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:32,659 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 7
+2024-02-02 11:42:32,659 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:32,659 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-02-02 11:42:32,676 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_created():271] file/dir created: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/wandb-summary.json
+2024-02-02 11:42:33,570 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-02 11:42:34,678 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:42:36,252 INFO    SenderThread:308936 [sender.py:transition_state():617] send defer: 8
+2024-02-02 11:42:36,253 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: poll_exit
+2024-02-02 11:42:36,253 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:36,253 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 8
+2024-02-02 11:42:36,254 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:36,254 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-02-02 11:42:36,254 INFO    SenderThread:308936 [job_builder.py:build():296] Attempting to build job artifact
+2024-02-02 11:42:36,255 INFO    SenderThread:308936 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-02-02 11:42:36,267 INFO    SenderThread:308936 [job_builder.py:build():402] adding wandb-job metadata file
+2024-02-02 11:42:36,281 INFO    SenderThread:308936 [sender.py:transition_state():617] send defer: 9
+2024-02-02 11:42:36,281 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:36,282 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 9
+2024-02-02 11:42:36,282 DEBUG   SenderThread:308936 [sender.py:send():382] send: artifact
+2024-02-02 11:42:36,572 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-02 11:42:36,679 INFO    Thread-12 :308936 [dir_watcher.py:_on_file_modified():288] file/dir modified: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:42:39,098 INFO    SenderThread:308936 [sender.py:send_artifact():1494] sent artifact job-https___github.com_fengyufengzi_ChatGLM2-6B.git_ptuning_main.py - {'id': 'QXJ0aWZhY3Q6NzAyNTkzODI4', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEzMzAxOTg0NA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NzAyOTc2Mzc2', 'versionIndex': 9}}}
+2024-02-02 11:42:39,099 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:39,099 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-02-02 11:42:39,099 INFO    SenderThread:308936 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-02-02 11:42:39,681 INFO    SenderThread:308936 [dir_watcher.py:finish():388] scan: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files
+2024-02-02 11:42:39,681 INFO    SenderThread:308936 [dir_watcher.py:finish():402] scan save: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/conda-environment.yaml conda-environment.yaml
+2024-02-02 11:42:39,681 INFO    SenderThread:308936 [dir_watcher.py:finish():402] scan save: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log output.log
+2024-02-02 11:42:39,681 INFO    SenderThread:308936 [dir_watcher.py:finish():402] scan save: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/wandb-metadata.json wandb-metadata.json
+2024-02-02 11:42:39,682 INFO    SenderThread:308936 [dir_watcher.py:finish():402] scan save: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/config.yaml config.yaml
+2024-02-02 11:42:39,682 INFO    SenderThread:308936 [dir_watcher.py:finish():402] scan save: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/requirements.txt requirements.txt
+2024-02-02 11:42:39,682 INFO    SenderThread:308936 [dir_watcher.py:finish():402] scan save: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/wandb-summary.json wandb-summary.json
+2024-02-02 11:42:39,682 INFO    SenderThread:308936 [sender.py:transition_state():617] send defer: 10
+2024-02-02 11:42:39,682 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: poll_exit
+2024-02-02 11:42:39,686 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:39,687 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 10
+2024-02-02 11:42:39,691 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:39,691 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-02-02 11:42:39,691 INFO    SenderThread:308936 [file_pusher.py:finish():175] shutting down file pusher
+2024-02-02 11:42:40,575 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-02 11:42:40,576 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: poll_exit
+2024-02-02 11:42:41,576 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-02 11:42:41,577 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: poll_exit
+2024-02-02 11:42:41,577 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:42:42,579 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-02 11:42:42,580 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: poll_exit
+2024-02-02 11:42:43,580 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-02 11:42:43,581 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: poll_exit
+2024-02-02 11:42:44,142 INFO    wandb-upload_2:308936 [upload_job.py:push():131] Uploaded file /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/output.log
+2024-02-02 11:42:44,582 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-02 11:42:44,583 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: poll_exit
+2024-02-02 11:42:45,256 INFO    wandb-upload_0:308936 [upload_job.py:push():131] Uploaded file /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/requirements.txt
+2024-02-02 11:42:45,391 INFO    wandb-upload_3:308936 [upload_job.py:push():131] Uploaded file /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/config.yaml
+2024-02-02 11:42:45,583 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-02 11:42:45,585 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: poll_exit
+2024-02-02 11:42:46,585 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-02 11:42:46,586 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: status_report
+2024-02-02 11:42:46,586 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: poll_exit
+2024-02-02 11:42:46,727 INFO    wandb-upload_1:308936 [upload_job.py:push():131] Uploaded file /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/conda-environment.yaml
+2024-02-02 11:42:46,878 INFO    wandb-upload_4:308936 [upload_job.py:push():131] Uploaded file /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/files/wandb-summary.json
+2024-02-02 11:42:47,079 INFO    Thread-11 (_thread_body):308936 [sender.py:transition_state():617] send defer: 11
+2024-02-02 11:42:47,079 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:47,080 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 11
+2024-02-02 11:42:47,080 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:47,080 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-02-02 11:42:47,081 INFO    SenderThread:308936 [file_pusher.py:join():181] waiting for file pusher
+2024-02-02 11:42:47,081 INFO    SenderThread:308936 [sender.py:transition_state():617] send defer: 12
+2024-02-02 11:42:47,081 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:47,081 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 12
+2024-02-02 11:42:47,082 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:47,082 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-02-02 11:42:47,082 INFO    SenderThread:308936 [file_stream.py:finish():595] file stream finish called
+2024-02-02 11:42:47,586 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-02 11:42:49,453 INFO    SenderThread:308936 [file_stream.py:finish():599] file stream finish is done
+2024-02-02 11:42:49,454 INFO    SenderThread:308936 [sender.py:transition_state():617] send defer: 13
+2024-02-02 11:42:49,454 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: poll_exit
+2024-02-02 11:42:49,454 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:49,455 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 13
+2024-02-02 11:42:49,455 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:49,456 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-02-02 11:42:49,456 INFO    SenderThread:308936 [sender.py:transition_state():617] send defer: 14
+2024-02-02 11:42:49,456 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: defer
+2024-02-02 11:42:49,456 INFO    HandlerThread:308936 [handler.py:handle_request_defer():172] handle defer: 14
+2024-02-02 11:42:49,457 DEBUG   SenderThread:308936 [sender.py:send():382] send: final
+2024-02-02 11:42:49,457 DEBUG   SenderThread:308936 [sender.py:send():382] send: footer
+2024-02-02 11:42:49,457 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: defer
+2024-02-02 11:42:49,457 INFO    SenderThread:308936 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-02-02 11:42:49,458 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-02 11:42:49,459 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-02 11:42:49,459 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: server_info
+2024-02-02 11:42:49,460 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: poll_exit
+2024-02-02 11:42:49,460 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: poll_exit
+2024-02-02 11:42:49,461 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: get_summary
+2024-02-02 11:42:49,461 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: server_info
+2024-02-02 11:42:49,462 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: sampled_history
+2024-02-02 11:42:49,465 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-02 11:42:49,466 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: job_info
+2024-02-02 11:42:50,621 DEBUG   SenderThread:308936 [sender.py:send_request():409] send_request: job_info
+2024-02-02 11:42:50,621 INFO    MainThread:308936 [wandb_run.py:_footer_history_summary_info():3857] rendering history
+2024-02-02 11:42:50,622 INFO    MainThread:308936 [wandb_run.py:_footer_history_summary_info():3889] rendering summary
+2024-02-02 11:42:50,622 INFO    MainThread:308936 [wandb_run.py:_footer_sync_info():3816] logging synced files
+2024-02-02 11:42:50,623 DEBUG   HandlerThread:308936 [handler.py:handle_request():146] handle_request: shutdown
+2024-02-02 11:42:50,623 INFO    HandlerThread:308936 [handler.py:finish():869] shutting down handler
+2024-02-02 11:42:51,467 INFO    WriterThread:308936 [datastore.py:close():296] close: /data/ai/ChatGLM2-6B/ptuning/wandb/run-20240202_112622-y4g5zg4i/run-y4g5zg4i.wandb
+2024-02-02 11:42:51,621 INFO    SenderThread:308936 [sender.py:finish():1572] shutting down sender
+2024-02-02 11:42:51,621 INFO    SenderThread:308936 [file_pusher.py:finish():175] shutting down file pusher
+2024-02-02 11:42:51,621 INFO    SenderThread:308936 [file_pusher.py:join():181] waiting for file pusher

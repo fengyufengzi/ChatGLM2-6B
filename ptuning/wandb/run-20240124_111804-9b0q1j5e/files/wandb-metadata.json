@@ -1,0 +1,243 @@
+{
+    "os": "Linux-5.19.0-38-generic-x86_64-with-glibc2.35",
+    "python": "3.10.13",
+    "heartbeatAt": "2024-01-24T03:18:06.846709",
+    "startedAt": "2024-01-24T03:18:04.828046",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--do_predict",
+        "--validation_file",
+        "../data/val.json",
+        "--test_file",
+        "../data/test.json",
+        "--overwrite_cache",
+        "--prompt_column",
+        "query",
+        "--response_column",
+        "answer",
+        "--model_name_or_path",
+        "/home/ubuntu/Documents/ai/model/chatglm2-6b",
+        "--ptuning_checkpoint",
+        "./output/adgen-chatglm2-6b-pt-128-1e-4/checkpoint-1400",
+        "--output_dir",
+        "./output/adgen-chatglm2-6b-pt-128-1e-4",
+        "--overwrite_output_dir",
+        "--max_source_length",
+        "64",
+        "--max_target_length",
+        "256",
+        "--per_device_eval_batch_size",
+        "1",
+        "--per_device_eval_batch_size",
+        "4",
+        "--gradient_accumulation_steps",
+        "16",
+        "--predict_with_generate",
+        "--pre_seq_len",
+        "128",
+        "--quantization_bit",
+        "8",
+        "--source_prefix",
+        "[\u652f\u4ed8\u5b9d\u4e13\u7528]\\n\u8bf7\u7528\u6700\u7b80\u6d01\u7684\u8bed\u8a00\u56de\u7b54\u5982\u4e0b\u95ee\u9898:"
+    ],
+    "state": "running",
+    "program": "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py",
+    "codePathLocal": "main.py",
+    "codePath": "ptuning/main.py",
+    "git": {
+        "remote": "https://github.com/fengyufengzi/ChatGLM2-6B.git",
+        "commit": "284cb911a1f58200ef887669fc0b863d782e28db"
+    },
+    "email": "4328521+fengyufengzi@users.noreply.github.com",
+    "root": "/home/ubuntu/Documents/ai/ChatGLM2-6B",
+    "host": "marsen",
+    "username": "ubuntu",
+    "executable": "/home/ubuntu/miniconda3/envs/chatglm2/bin/python",
+    "cpu_count": 24,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 2362.07909375,
+        "min": 800.0,
+        "max": 4937.5
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1192.608,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 2141.844,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 1154.056,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 1100.189,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 1100.475,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 5800.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 5800.0
+        },
+        {
+            "current": 1100.37,
+            "min": 800.0,
+            "max": 5800.0
+        },
+        {
+            "current": 1138.297,
+            "min": 800.0,
+            "max": 5800.0
+        },
+        {
+            "current": 1165.825,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 1145.52,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 1169.121,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 1258.653,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 1212.438,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 3000.0,
+            "min": 800.0,
+            "max": 4300.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 182.2801628112793,
+            "used": 24.722740173339844
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": 25757220864
+        }
+    ],
+    "memory": {
+        "total": 62.573856353759766
+    }
+}

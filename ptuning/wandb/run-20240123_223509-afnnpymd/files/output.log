@@ -1,0 +1,326 @@
+
+01/23/2024 22:35:13 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/datasets/load.py:2483: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+[INFO|configuration_utils.py:667] 2024-01-23 22:35:15,103 >> loading configuration file /home/ubuntu/Documents/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:667] 2024-01-23 22:35:15,105 >> loading configuration file /home/ubuntu/Documents/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:725] 2024-01-23 22:35:15,106 >> Model config ChatGLMConfig {
+  "_name_or_path": "/home/ubuntu/Documents/ai/model/chatglm2-6b",
+  "add_bias_linear": false,
+  "add_qkv_bias": true,
+  "apply_query_key_layer_scaling": true,
+  "apply_residual_connection_post_layernorm": false,
+  "architectures": [
+    "ChatGLMModel"
+  ],
+  "attention_dropout": 0.0,
+  "attention_softmax_in_fp32": true,
+  "auto_map": {
+    "AutoConfig": "configuration_chatglm.ChatGLMConfig",
+    "AutoModel": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForCausalLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSeq2SeqLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSequenceClassification": "modeling_chatglm.ChatGLMForSequenceClassification"
+  },
+  "bias_dropout_fusion": true,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "ffn_hidden_size": 13696,
+  "fp32_residual_connection": false,
+  "hidden_dropout": 0.0,
+  "hidden_size": 4096,
+  "kv_channels": 128,
+  "layernorm_epsilon": 1e-05,
+  "model_type": "chatglm",
+  "multi_query_attention": true,
+  "multi_query_group_num": 2,
+  "num_attention_heads": 32,
+  "num_layers": 28,
+  "original_rope": true,
+  "pad_token_id": 0,
+  "padded_vocab_size": 65024,
+  "post_layer_norm": true,
+  "pre_seq_len": null,
+  "prefix_projection": false,
+  "quantization_bit": 0,
+  "rmsnorm": true,
+  "seq_length": 32768,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.30.2",
+  "use_cache": true,
+  "vocab_size": 65024
+}
+[INFO|tokenization_utils_base.py:1821] 2024-01-23 22:35:15,107 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:1821] 2024-01-23 22:35:15,107 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:1821] 2024-01-23 22:35:15,107 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:1821] 2024-01-23 22:35:15,107 >> loading file tokenizer_config.json
+[INFO|modeling_utils.py:2575] 2024-01-23 22:35:15,150 >> loading weights file /home/ubuntu/Documents/ai/model/chatglm2-6b/pytorch_model.bin.index.json
+[INFO|configuration_utils.py:577] 2024-01-23 22:35:15,151 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+
+Loading checkpoint shards:  57%|██████████████████████████████████████████████████████████████████████████▊                                                        | 4/7 [00:02<00:02,  1.40it/s]
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:04<00:00,  1.46it/s]
+[INFO|modeling_utils.py:3295] 2024-01-23 22:35:19,974 >> All model checkpoint weights were used when initializing ChatGLMForConditionalGeneration.
+[WARNING|modeling_utils.py:3297] 2024-01-23 22:35:19,974 >> Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /home/ubuntu/Documents/ai/model/chatglm2-6b and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[INFO|modeling_utils.py:2927] 2024-01-23 22:35:19,975 >> Generation config file not found, using a generation config created from the model config.
+prefix: [支付宝专用]请用最简洁的语言回答如下问题:
+Running tokenizer on train dataset:  35%|█████████████████████████████████████▎                                                                     | 2000/5726 [00:01<00:02, 1816.46 examples/s]
+input_ids [64790, 64792, 790, 39063, 36333, 30996, 55073, 54437, 40697, 40042, 33287, 33163, 31639, 30954, 30995, 30951, 517, 30910, 30939, 30996, 13, 13, 54761, 31211, 36384, 35074, 55435, 54919, 37686, 30987, 13, 13, 55437, 31211, 30910, 49685, 54638, 30954, 54855, 54539, 35679, 30946, 49685, 54638, 54855, 54973, 54714, 30939, 30970, 54943, 33599, 56005, 54747, 35679, 30946, 49685, 54638, 56005, 55901, 54714, 30943, 30939, 54943, 33217, 54750, 41189, 30954, 58812, 55555, 35679, 30946, 54750, 41189, 55148, 55555, 33136, 30939, 30939, 55067, 33599, 55344, 54615, 35679, 30946, 54750, 41189, 54809, 56214, 54704, 54641, 30939, 30943, 54943, 33217, 56446, 34582, 30954, 54547, 56365, 35679, 30946, 56446, 34582, 57591, 55086, 54662, 30973, 54943, 33599, 54645, 56890, 55284, 35679, 30946, 56446, 34582, 55066, 55771, 33856, 30966, 30978, 30973, 56519, 30939, 30943, 54943, 33217, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+inputs [支付宝专用]请用最简洁的语言回答如下问题:[Round 1]
+问：福州身份证换证在哪里?
+答： 鼓楼区:华大派出所(鼓楼区华林路15号)、洪山派出所(鼓楼区洪甘路21号)。台江区:鳌峰派出所(台江区亚峰小区11座)、宁化派出所(台江区万寿二道12号)。仓山区:上渡派出所(仓山区堤边里8号)、三叉街派出所(仓山区则徐大道368弄12号)。
+label_ids [-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 30910, 49685, 54638, 30954, 54855, 54539, 35679, 30946, 49685, 54638, 54855, 54973, 54714, 30939, 30970, 54943, 33599, 56005, 54747, 35679, 30946, 49685, 54638, 56005, 55901, 54714, 30943, 30939, 54943, 33217, 54750, 41189, 30954, 58812, 55555, 35679, 30946, 54750, 41189, 55148, 55555, 33136, 30939, 30939, 55067, 33599, 55344, 54615, 35679, 30946, 54750, 41189, 54809, 56214, 54704, 54641, 30939, 30943, 54943, 33217, 56446, 34582, 30954, 54547, 56365, 35679, 30946, 56446, 34582, 57591, 55086, 54662, 30973, 54943, 33599, 54645, 56890, 55284, 35679, 30946, 56446, 34582, 55066, 55771, 33856, 30966, 30978, 30973, 56519, 30939, 30943, 54943, 33217, 2, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100]
+labels 鼓楼区:华大派出所(鼓楼区华林路15号)、洪山派出所(鼓楼区洪甘路21号)。台江区:鳌峰派出所(台江区亚峰小区11座)、宁化派出所(台江区万寿二道12号)。仓山区:上渡派出所(仓山区堤边里8号)、三叉街派出所(仓山区则徐大道368弄12号)。
+inputs[支付宝专用]请用最简洁的语言回答如下问题:什么是蚂蚁庄园
+input_ids [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64790, 64792, 790, 39063, 36333, 30996, 55073, 54437, 40697, 40042, 33287, 33163, 31639, 30954, 35318, 41069, 46980]
+inputs [支付宝专用]请用最简洁的语言回答如下问题:什么是蚂蚁庄园
+label_ids [64790, 64792, 30910, 41069, 46980, 41680, 33053, 39063, 32488, 39330, 38346, 35439, 32033, 31155]
+Running tokenizer on train dataset: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 5726/5726 [00:03<00:00, 1771.63 examples/s]
+Running tokenizer on prediction dataset: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████| 315/315 [00:00<00:00, 8250.21 examples/s]
+01/23/2024 22:35:27 - WARNING - transformers_modules.chatglm2-6b.modeling_chatglm - `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+[INFO|trainer.py:577] 2024-01-23 22:35:27,165 >> max_steps is given, it will override any value given in num_train_epochs
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+[INFO|trainer.py:1786] 2024-01-23 22:35:27,637 >> ***** Running training *****
+[INFO|trainer.py:1787] 2024-01-23 22:35:27,637 >>   Num examples = 5,725
+[INFO|trainer.py:1788] 2024-01-23 22:35:27,637 >>   Num Epochs = 6
+[INFO|trainer.py:1789] 2024-01-23 22:35:27,637 >>   Instantaneous batch size per device = 1
+[INFO|trainer.py:1790] 2024-01-23 22:35:27,637 >>   Total train batch size (w. parallel, distributed & accumulation) = 16
+[INFO|trainer.py:1791] 2024-01-23 22:35:27,637 >>   Gradient Accumulation steps = 16
+[INFO|trainer.py:1792] 2024-01-23 22:35:27,637 >>   Total optimization steps = 2,000
+[INFO|trainer.py:1793] 2024-01-23 22:35:27,638 >>   Number of trainable parameters = 1,835,008
+[INFO|integrations.py:727] 2024-01-23 22:35:27,666 >> Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+  0%|                                                                                                                                                                   | 0/2000 [00:00<?, ?it/s]/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+
+
+
+
+
+
+
+
+  0%|▋                                                                                                                                                        | 9/2000 [00:41<2:32:13,  4.59s/it]
+
+
+
+
+
+
+
+
+
+
+  1%|█▍                                                                                                                                                      | 19/2000 [01:28<2:31:40,  4.59s/it]
+
+
+
+
+
+
+
+
+
+
+  1%|██▏                                                                                                                                                     | 29/2000 [02:13<2:29:05,  4.54s/it]
+
+
+
+
+
+
+
+
+
+
+  2%|██▉                                                                                                                                                     | 39/2000 [02:59<2:29:19,  4.57s/it]
+
+
+
+
+
+
+
+
+
+
+  2%|███▋                                                                                                                                                    | 49/2000 [03:44<2:28:05,  4.55s/it]
+
+
+
+
+
+
+
+
+
+
+  3%|████▍                                                                                                                                                   | 59/2000 [04:30<2:28:05,  4.58s/it]
+
+
+
+
+
+
+
+
+
+
+  3%|█████▏                                                                                                                                                  | 69/2000 [05:16<2:27:47,  4.59s/it]
+
+
+
+
+
+
+
+
+
+
+  4%|██████                                                                                                                                                  | 79/2000 [06:02<2:26:59,  4.59s/it]
+
+
+
+
+
+
+
+
+
+
+  4%|██████▊                                                                                                                                                 | 89/2000 [06:48<2:25:34,  4.57s/it]
+
+
+
+
+
+
+
+
+
+
+  5%|███████▌                                                                                                                                                | 99/2000 [07:33<2:24:19,  4.56s/it]
+
+
+
+
+
+
+
+
+
+
+  5%|████████▏                                                                                                                                              | 109/2000 [08:19<2:24:45,  4.59s/it]
+
+
+
+
+
+
+
+
+
+
+  6%|████████▉                                                                                                                                              | 119/2000 [09:05<2:23:21,  4.57s/it]
+
+
+
+
+
+
+
+
+
+
+  6%|█████████▋                                                                                                                                             | 129/2000 [09:51<2:22:23,  4.57s/it]
+
+
+
+
+
+
+
+
+
+
+  7%|██████████▍                                                                                                                                            | 139/2000 [10:36<2:21:33,  4.56s/it]
+
+
+
+
+
+
+
+
+
+
+  7%|███████████▏                                                                                                                                           | 149/2000 [11:22<2:20:43,  4.56s/it]
+
+
+
+
+
+
+
+
+
+
+  8%|████████████                                                                                                                                           | 159/2000 [12:08<2:21:49,  4.62s/it]
+
+
+
+
+
+
+
+
+
+
+  8%|████████████▊                                                                                                                                          | 169/2000 [12:53<2:18:55,  4.55s/it]
+
+
+
+
+
+
+
+
+
+
+  9%|█████████████▌                                                                                                                                         | 179/2000 [13:39<2:19:48,  4.61s/it]
+
+
+
+
+
+
+
+
+
+  9%|██████████████▏                                                                                                                                        | 188/2000 [14:21<2:20:05,  4.64s/it]Traceback (most recent call last):
+  File "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py", line 478, in <module>
+    main()
+  File "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py", line 390, in main
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/trainer.py", line 1645, in train
+    return inner_training_loop(
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/trainer.py", line 1943, in _inner_training_loop
+    and (torch.isnan(tr_loss_step) or torch.isinf(tr_loss_step))
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py", line 478, in <module>
+    main()
+  File "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py", line 390, in main
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/trainer.py", line 1645, in train
+    return inner_training_loop(
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/trainer.py", line 1943, in _inner_training_loop
+    and (torch.isnan(tr_loss_step) or torch.isinf(tr_loss_step))
+KeyboardInterrupt

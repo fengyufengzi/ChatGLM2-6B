@@ -1,0 +1,141 @@
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/datasets/load.py:2483: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Generating train split: 5726 examples [00:00, 262982.18 examples/s]
+Generating validation split: 10 examples [00:00, 14368.98 examples/s]
+Generating test split: 10 examples [00:00, 20460.02 examples/s]
+[INFO|configuration_utils.py:667] 2024-01-25 17:46:33,807 >> loading configuration file /home/ubuntu/Documents/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:667] 2024-01-25 17:46:33,809 >> loading configuration file /home/ubuntu/Documents/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:725] 2024-01-25 17:46:33,809 >> Model config ChatGLMConfig {
+  "_name_or_path": "/home/ubuntu/Documents/ai/model/chatglm2-6b",
+  "add_bias_linear": false,
+  "add_qkv_bias": true,
+  "apply_query_key_layer_scaling": true,
+  "apply_residual_connection_post_layernorm": false,
+  "architectures": [
+    "ChatGLMModel"
+  ],
+  "attention_dropout": 0.0,
+  "attention_softmax_in_fp32": true,
+  "auto_map": {
+    "AutoConfig": "configuration_chatglm.ChatGLMConfig",
+    "AutoModel": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForCausalLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSeq2SeqLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSequenceClassification": "modeling_chatglm.ChatGLMForSequenceClassification"
+  },
+  "bias_dropout_fusion": true,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "ffn_hidden_size": 13696,
+  "fp32_residual_connection": false,
+  "hidden_dropout": 0.0,
+  "hidden_size": 4096,
+  "kv_channels": 128,
+  "layernorm_epsilon": 1e-05,
+  "model_type": "chatglm",
+  "multi_query_attention": true,
+  "multi_query_group_num": 2,
+  "num_attention_heads": 32,
+  "num_layers": 28,
+  "original_rope": true,
+  "pad_token_id": 0,
+  "padded_vocab_size": 65024,
+  "post_layer_norm": true,
+  "pre_seq_len": null,
+  "prefix_projection": false,
+  "quantization_bit": 0,
+  "rmsnorm": true,
+  "seq_length": 32768,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.30.2",
+  "use_cache": true,
+  "vocab_size": 65024
+}
+[INFO|tokenization_utils_base.py:1821] 2024-01-25 17:46:33,810 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:1821] 2024-01-25 17:46:33,810 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:1821] 2024-01-25 17:46:33,810 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:1821] 2024-01-25 17:46:33,810 >> loading file tokenizer_config.json
+[INFO|modeling_utils.py:2575] 2024-01-25 17:46:33,851 >> loading weights file /home/ubuntu/Documents/ai/model/chatglm2-6b/pytorch_model.bin.index.json
+[INFO|configuration_utils.py:577] 2024-01-25 17:46:33,852 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+Loading checkpoint shards:  14%|█████████▋                                                          | 1/7 [00:00<00:04,  1.44it/s]
+
+Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████| 7/7 [00:04<00:00,  1.50it/s]
+[INFO|modeling_utils.py:3295] 2024-01-25 17:46:38,543 >> All model checkpoint weights were used when initializing ChatGLMForConditionalGeneration.
+[WARNING|modeling_utils.py:3297] 2024-01-25 17:46:38,543 >> Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /home/ubuntu/Documents/ai/model/chatglm2-6b and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[INFO|modeling_utils.py:2927] 2024-01-25 17:46:38,544 >> Generation config file not found, using a generation config created from the model config.
+Quantized to 8 bit
+prefix: 你是专业客服人员，请用最简洁的语言回答用户的问题：
+    问题：湖北高考成绩会发短信吗？
+    回答：不会。可自行在网上查询。
+    问题：长沙在读大学生落户有补贴吗？
+    回答：长沙在读大学生落户没有补贴，本科及以上大学生毕业之后落户长沙且在长沙工作符合相关条件的可以申领租房和生活补贴。
+    问题：青岛市老年人高龄补贴标准是多少？
+    回答：对不起，根据参考资料无法回答。
+    问题：
+inputs你是专业客服人员，请用最简洁的语言回答用户的问题：
+    问题：湖北高考成绩会发短信吗？
+    回答：不会。可自行在网上查询。
+    问题：长沙在读大学生落户有补贴吗？
+    回答：长沙在读大学生落户没有补贴，本科及以上大学生毕业之后落户长沙且在长沙工作符合相关条件的可以申领租房和生活补贴。
+    问题：青岛市老年人高龄补贴标准是多少？
+    回答：对不起，根据参考资料无法回答。
+    问题：什么是蚂蚁庄园
+input_ids [64790, 64792, 30910, 34607, 31720, 37605, 31698, 31123, 55073, 54437, 40697, 40042, 33287, 32053, 32184, 31211, 13, 13, 13, 296, 31639, 31211, 33173, 33390, 32153, 54549, 54559, 37980, 55398, 31514, 13, 296, 33287, 31211, 31777, 31155, 54568, 33275, 40679, 34262, 31155, 13, 296, 31639, 31211, 34102, 50674, 33482, 38941, 54536, 34025, 55398, 31514, 13, 296, 33287, 31211, 34102, 50674, 33482, 38941, 31631, 34025, 31123]
+inputs 你是专业客服人员，请用最简洁的语言回答用户的问题：
+    问题：湖北高考成绩会发短信吗？
+    回答：不会。可自行在网上查询。
+    问题：长沙在读大学生落户有补贴吗？
+    回答：长沙在读大学生落户没有补贴，
+label_ids [64790, 64792, 30910, 41069, 46980, 41680, 33053, 39063, 32488, 39330, 38346, 35439, 32033, 31155]
+labels 蚂蚁庄园是一款基于支付宝支付行为的农场养成游戏。
+Running tokenizer on validation dataset: 100%|███████████████████████████████████████████| 10/10 [00:00<00:00, 1569.14 examples/s]
+[INFO|trainer.py:577] 2024-01-25 17:46:41,904 >> max_steps is given, it will override any value given in num_train_epochs
+[INFO|trainer.py:3200] 2024-01-25 17:46:41,907 >> ***** Running Evaluation *****
+[INFO|trainer.py:3202] 2024-01-25 17:46:41,907 >>   Num examples = 10
+[INFO|trainer.py:3205] 2024-01-25 17:46:41,907 >>   Batch size = 4
+[INFO|configuration_utils.py:577] 2024-01-25 17:46:41,909 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+01/25/2024 17:46:41 - INFO - __main__ - *** Evaluate ***
+  0%|                                                                                                       | 0/3 [00:00<?, ?it/s][INFO|configuration_utils.py:577] 2024-01-25 17:46:45,040 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 67%|███████████████████████████████████████████████████████████████▎                               | 2/3 [00:00<00:00,  2.23it/s][INFO|configuration_utils.py:577] 2024-01-25 17:46:45,934 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:02<00:00,  1.12s/it]Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.264 seconds.
+Prefix dict has been built successfully.
+[INFO|integrations.py:727] 2024-01-25 17:46:48,285 >> Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:03<00:00,  1.08s/it]
+01/25/2024 17:46:48 - DEBUG - jieba - Building prefix dict from the default dictionary ...
+01/25/2024 17:46:48 - DEBUG - jieba - Loading model from cache /tmp/jieba.cache
+01/25/2024 17:46:48 - DEBUG - jieba - Loading model cost 0.264 seconds.
+01/25/2024 17:46:48 - DEBUG - jieba - Prefix dict has been built successfully.
+***** eval metrics *****
+  eval_bleu-4             =     1.2543
+  eval_rouge-1            =    12.9226
+  eval_rouge-2            =        0.0
+  eval_rouge-l            =     9.6689
+  eval_runtime            = 0:00:06.37
+  eval_samples            =         10
+  eval_samples_per_second =      1.568
+  eval_steps_per_second   =       0.47

@@ -1,0 +1,208 @@
+02/03/2024 22:10:50 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+loading checkpoint: /data/ai/ChatGLM2-6B/ptuning/output/adgen-chatglm2-6b-pt-128-1e-4/checkpoint-700
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/datasets/load.py:2483: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+[INFO|configuration_utils.py:667] 2024-02-03 22:10:51,802 >> loading configuration file /data/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:667] 2024-02-03 22:10:51,803 >> loading configuration file /data/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:725] 2024-02-03 22:10:51,804 >> Model config ChatGLMConfig {
+  "_name_or_path": "/data/ai/model/chatglm2-6b",
+  "add_bias_linear": false,
+  "add_qkv_bias": true,
+  "apply_query_key_layer_scaling": true,
+  "apply_residual_connection_post_layernorm": false,
+  "architectures": [
+    "ChatGLMModel"
+  ],
+  "attention_dropout": 0.0,
+  "attention_softmax_in_fp32": true,
+  "auto_map": {
+    "AutoConfig": "configuration_chatglm.ChatGLMConfig",
+    "AutoModel": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForCausalLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSeq2SeqLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSequenceClassification": "modeling_chatglm.ChatGLMForSequenceClassification"
+  },
+  "bias_dropout_fusion": true,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "ffn_hidden_size": 13696,
+  "fp32_residual_connection": false,
+  "hidden_dropout": 0.0,
+  "hidden_size": 4096,
+  "kv_channels": 128,
+  "layernorm_epsilon": 1e-05,
+  "model_type": "chatglm",
+  "multi_query_attention": true,
+  "multi_query_group_num": 2,
+  "num_attention_heads": 32,
+  "num_layers": 28,
+  "original_rope": true,
+  "pad_token_id": 0,
+  "padded_vocab_size": 65024,
+  "post_layer_norm": true,
+  "pre_seq_len": null,
+  "prefix_projection": false,
+  "quantization_bit": 0,
+  "rmsnorm": true,
+  "seq_length": 32768,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.30.2",
+  "use_cache": true,
+  "vocab_size": 65024
+}
+[INFO|tokenization_utils_base.py:1821] 2024-02-03 22:10:51,805 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:1821] 2024-02-03 22:10:51,805 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:1821] 2024-02-03 22:10:51,805 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:1821] 2024-02-03 22:10:51,805 >> loading file tokenizer_config.json
+[INFO|modeling_utils.py:2575] 2024-02-03 22:10:51,856 >> loading weights file /data/ai/model/chatglm2-6b/pytorch_model.bin.index.json
+[INFO|configuration_utils.py:577] 2024-02-03 22:10:51,856 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+
+
+
+Loading checkpoint shards:  86%|████████████████████████████████████████████████████████████████████████████████▌             | 6/7 [00:14<00:02,  2.15s/it]
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:15<00:00,  2.19s/it]
+[INFO|modeling_utils.py:3295] 2024-02-03 22:11:07,184 >> All model checkpoint weights were used when initializing ChatGLMForConditionalGeneration.
+[WARNING|modeling_utils.py:3297] 2024-02-03 22:11:07,184 >> Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /data/ai/model/chatglm2-6b and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[INFO|modeling_utils.py:2927] 2024-02-03 22:11:07,185 >> Generation config file not found, using a generation config created from the model config.
+prefix: 你是蚂蚁金服公司的客服人员,用清晰简洁的语言回答老年人的问题.如果因为知识库受限无法回答,只需回答'对不起，根据参考资料无法回答'
+eval dataset: Dataset({
+    features: ['query', 'answer'],
+    num_rows: 315
+})
+inputs你是蚂蚁金服公司的客服人员,用清晰简洁的语言回答老年人的问题.如果因为知识库受限无法回答,只需回答'对不起，根据参考资料无法回答'
+问：湖北高考成绩会发短信吗？
+答：不会。可自行在网上查询。
+问：长沙在读大学生落户有补贴吗？
+答：长沙在读大学生落户没有补贴，本科及以上大学生毕业之后落户长沙且在长沙工作符合相关条件的可以申领租房和生活补贴。
+问：青岛市老年人高龄补贴标准是多少？
+答：对不起，根据参考资料无法回答。
+问：什么是蚂蚁庄园
+答：
+input_ids [64790, 64792, 30910, 34607, 41069, 54702, 54764, 33031, 37605, 31698, 30932, 54571, 33724, 40697, 40042, 33287, 52775, 31639, 30930, 31654, 31659, 31848, 55651, 50072, 32067, 33287, 30932, 37757, 33287, 30953, 43279, 31123, 31793, 33214, 32315, 32067, 33287, 30953, 13, 13, 296, 13, 54761, 31211, 33173, 33390, 32153, 54549, 54559, 37980, 55398, 31514, 13, 55437, 31211, 31777, 31155, 54568, 33275, 40679, 34262, 31155, 13, 54761, 31211, 34102, 50674, 33482, 38941, 54536, 34025, 55398, 31514, 13, 55437, 31211, 34102, 50674, 33482, 38941, 31631, 34025, 31123, 32894, 34853, 33482, 32121, 31797, 38941, 34102, 55025, 54534, 34102, 31624, 32363, 31724, 36337, 31628, 53546, 42590, 38027, 34025, 31155, 13, 54761, 31211, 44356, 34790, 43991, 34025, 31858, 44842, 31514, 13, 55437, 31211, 43279, 31123, 31793, 33214, 32315, 32067, 33287, 31155, 13, 54761, 31211, 35318]
+inputs 你是蚂蚁金服公司的客服人员,用清晰简洁的语言回答老年人的问题.如果因为知识库受限无法回答,只需回答'对不起，根据参考资料无法回答'
+问：湖北高考成绩会发短信吗？
+答：不会。可自行在网上查询。
+问：长沙在读大学生落户有补贴吗？
+答：长沙在读大学生落户没有补贴，本科及以上大学生毕业之后落户长沙且在长沙工作符合相关条件的可以申领租房和生活补贴。
+问：青岛市老年人高龄补贴标准是多少？
+答：对不起，根据参考资料无法回答。
+问：什么是
+label_ids [64790, 64792, 30910, 41069, 46980, 41680, 33053, 39063, 32488, 39330, 38346, 35439, 32033, 31155]
+labels 蚂蚁庄园是一款基于支付宝支付行为的农场养成游戏。
+inputs你是蚂蚁金服公司的客服人员,用清晰简洁的语言回答老年人的问题.如果因为知识库受限无法回答,只需回答'对不起，根据参考资料无法回答'
+问：湖北高考成绩会发短信吗？
+答：不会。可自行在网上查询。
+问：长沙在读大学生落户有补贴吗？
+答：长沙在读大学生落户没有补贴，本科及以上大学生毕业之后落户长沙且在长沙工作符合相关条件的可以申领租房和生活补贴。
+问：青岛市老年人高龄补贴标准是多少？
+答：对不起，根据参考资料无法回答。
+问：什么是蚂蚁庄园
+答：
+input_ids [64790, 64792, 30910, 34607, 41069, 54702, 54764, 33031, 37605, 31698, 30932, 54571, 33724, 40697, 40042, 33287, 52775, 31639, 30930, 31654, 31659, 31848, 55651, 50072, 32067, 33287, 30932, 37757, 33287, 30953, 43279, 31123, 31793, 33214, 32315, 32067, 33287, 30953, 13, 13, 296, 13, 54761, 31211, 33173, 33390, 32153, 54549, 54559, 37980, 55398, 31514, 13, 55437, 31211, 31777, 31155, 54568, 33275, 40679, 34262, 31155, 13, 54761, 31211, 34102, 50674, 33482, 38941, 54536, 34025, 55398, 31514, 13, 55437, 31211, 34102, 50674, 33482, 38941, 31631, 34025, 31123, 32894, 34853, 33482, 32121, 31797, 38941, 34102, 55025, 54534, 34102, 31624, 32363, 31724, 36337, 31628, 53546, 42590, 38027, 34025, 31155, 13, 54761, 31211, 44356, 34790, 43991, 34025, 31858, 44842, 31514, 13, 55437, 31211, 43279, 31123, 31793, 33214, 32315, 32067, 33287, 31155, 13, 54761, 31211, 35318]
+inputs 你是蚂蚁金服公司的客服人员,用清晰简洁的语言回答老年人的问题.如果因为知识库受限无法回答,只需回答'对不起，根据参考资料无法回答'
+问：湖北高考成绩会发短信吗？
+答：不会。可自行在网上查询。
+问：长沙在读大学生落户有补贴吗？
+答：长沙在读大学生落户没有补贴，本科及以上大学生毕业之后落户长沙且在长沙工作符合相关条件的可以申领租房和生活补贴。
+问：青岛市老年人高龄补贴标准是多少？
+答：对不起，根据参考资料无法回答。
+问：什么是
+label_ids [64790, 64792, 30910, 41069, 46980, 41680, 33053, 39063, 32488, 39330, 38346, 35439, 32033, 31155]
+labels 蚂蚁庄园是一款基于支付宝支付行为的农场养成游戏。
+02/03/2024 22:11:10 - INFO - __main__ - *** Evaluate ***
+Running tokenizer on validation dataset: 100%|█████████████████████████████████████████████████████████████████████| 20/20 [00:00<00:00, 2157.18 examples/s]
+Running tokenizer on prediction dataset: 100%|█████████████████████████████████████████████████████████████████████| 10/10 [00:00<00:00, 2132.01 examples/s]
+[INFO|trainer.py:577] 2024-02-03 22:11:10,636 >> max_steps is given, it will override any value given in num_train_epochs
+[INFO|trainer.py:3200] 2024-02-03 22:11:10,639 >> ***** Running Evaluation *****
+[INFO|trainer.py:3202] 2024-02-03 22:11:10,639 >>   Num examples = 20
+[INFO|trainer.py:3205] 2024-02-03 22:11:10,639 >>   Batch size = 4
+[INFO|configuration_utils.py:577] 2024-02-03 22:11:10,641 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  0%|                                                                                                                                 | 0/5 [00:00<?, ?it/s][INFO|configuration_utils.py:577] 2024-02-03 22:11:27,025 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 40%|████████████████████████████████████████████████▍                                                                        | 2/5 [00:03<00:05,  1.70s/it][INFO|configuration_utils.py:577] 2024-02-03 22:11:30,428 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 60%|████████████████████████████████████████████████████████████████████████▌                                                | 3/5 [00:06<00:04,  2.29s/it][INFO|configuration_utils.py:577] 2024-02-03 22:11:33,537 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 80%|████████████████████████████████████████████████████████████████████████████████████████████████▊                        | 4/5 [00:10<00:02,  2.84s/it][INFO|configuration_utils.py:577] 2024-02-03 22:11:37,304 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+02/03/2024 22:11:42 - DEBUG - jieba - Building prefix dict from the default dictionary ...
+02/03/2024 22:11:42 - DEBUG - jieba - Loading model from cache /tmp/jieba.cache
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 5/5 [00:15<00:00,  3.77s/it]Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+02/03/2024 22:11:43 - DEBUG - jieba - Loading model cost 0.275 seconds.
+02/03/2024 22:11:43 - DEBUG - jieba - Prefix dict has been built successfully.
+***** eval metrics *****
+  eval_bleu-4             =        2.1
+  eval_rouge-1            =    10.5593
+  eval_rouge-2            =     1.3298
+  eval_rouge-l            =     8.2114
+  eval_runtime            = 0:00:32.52
+  eval_samples            =         20
+  eval_samples_per_second =      0.615
+  eval_steps_per_second   =      0.154
+02/03/2024 22:11:43 - INFO - __main__ - *** Predict ***
+Loading model cost 0.275 seconds.
+Prefix dict has been built successfully.
+[INFO|integrations.py:727] 2024-02-03 22:11:43,161 >> Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 5/5 [00:16<00:00,  3.23s/it]
+[INFO|trainer.py:3200] 2024-02-03 22:11:43,164 >> ***** Running Prediction *****
+[INFO|trainer.py:3202] 2024-02-03 22:11:43,164 >>   Num examples = 10
+[INFO|trainer.py:3205] 2024-02-03 22:11:43,164 >>   Batch size = 4
+[INFO|configuration_utils.py:577] 2024-02-03 22:11:43,166 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  0%|                                                                                                                                 | 0/3 [00:00<?, ?it/s][INFO|configuration_utils.py:577] 2024-02-03 22:11:47,419 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 67%|████████████████████████████████████████████████████████████████████████████████▋                                        | 2/3 [00:03<00:01,  1.76s/it][INFO|configuration_utils.py:577] 2024-02-03 22:11:50,945 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+number os predict_samples: 10
+***** predict metrics *****
+  predict_bleu-4             =     12.856
+  predict_rouge-1            =    26.0515
+  predict_rouge-2            =    14.9393
+  predict_rouge-l            =    22.7478
+  predict_runtime            = 0:00:10.88
+  predict_samples            =         10
+  predict_samples_per_second =      0.919
+  predict_steps_per_second   =      0.276
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:06<00:00,  2.21s/it]

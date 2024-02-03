@@ -1,0 +1,997 @@
+
+01/23/2024 22:12:39 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/datasets/load.py:2483: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+[INFO|configuration_utils.py:667] 2024-01-23 22:12:41,412 >> loading configuration file /home/ubuntu/Documents/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:667] 2024-01-23 22:12:41,413 >> loading configuration file /home/ubuntu/Documents/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:725] 2024-01-23 22:12:41,414 >> Model config ChatGLMConfig {
+  "_name_or_path": "/home/ubuntu/Documents/ai/model/chatglm2-6b",
+  "add_bias_linear": false,
+  "add_qkv_bias": true,
+  "apply_query_key_layer_scaling": true,
+  "apply_residual_connection_post_layernorm": false,
+  "architectures": [
+    "ChatGLMModel"
+  ],
+  "attention_dropout": 0.0,
+  "attention_softmax_in_fp32": true,
+  "auto_map": {
+    "AutoConfig": "configuration_chatglm.ChatGLMConfig",
+    "AutoModel": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForCausalLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSeq2SeqLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSequenceClassification": "modeling_chatglm.ChatGLMForSequenceClassification"
+  },
+  "bias_dropout_fusion": true,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "ffn_hidden_size": 13696,
+  "fp32_residual_connection": false,
+  "hidden_dropout": 0.0,
+  "hidden_size": 4096,
+  "kv_channels": 128,
+  "layernorm_epsilon": 1e-05,
+  "model_type": "chatglm",
+  "multi_query_attention": true,
+  "multi_query_group_num": 2,
+  "num_attention_heads": 32,
+  "num_layers": 28,
+  "original_rope": true,
+  "pad_token_id": 0,
+  "padded_vocab_size": 65024,
+  "post_layer_norm": true,
+  "pre_seq_len": null,
+  "prefix_projection": false,
+  "quantization_bit": 0,
+  "rmsnorm": true,
+  "seq_length": 32768,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.30.2",
+  "use_cache": true,
+  "vocab_size": 65024
+}
+[INFO|tokenization_utils_base.py:1821] 2024-01-23 22:12:41,415 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:1821] 2024-01-23 22:12:41,415 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:1821] 2024-01-23 22:12:41,415 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:1821] 2024-01-23 22:12:41,415 >> loading file tokenizer_config.json
+[INFO|modeling_utils.py:2575] 2024-01-23 22:12:41,459 >> loading weights file /home/ubuntu/Documents/ai/model/chatglm2-6b/pytorch_model.bin.index.json
+[INFO|configuration_utils.py:577] 2024-01-23 22:12:41,459 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+
+
+Loading checkpoint shards:  86%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                  | 6/7 [00:04<00:00,  1.36it/s]
+Loading checkpoint shards: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 7/7 [00:04<00:00,  1.42it/s]
+[INFO|modeling_utils.py:3295] 2024-01-23 22:12:46,401 >> All model checkpoint weights were used when initializing ChatGLMForConditionalGeneration.
+[WARNING|modeling_utils.py:3297] 2024-01-23 22:12:46,401 >> Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /home/ubuntu/Documents/ai/model/chatglm2-6b and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[INFO|modeling_utils.py:2927] 2024-01-23 22:12:46,402 >> Generation config file not found, using a generation config created from the model config.
+prefix: [支付宝专用]请用最简洁的语言回答如下问题:
+
+Running tokenizer on train dataset:  70%|██████████████████████████████████████████████████████████████████████████▋                                | 4000/5726 [00:02<00:00, 1747.67 examples/s]
+input_ids [64790, 64792, 790, 39063, 36333, 30996, 55073, 54437, 40697, 40042, 33287, 33163, 31639, 30954, 30995, 30951, 517, 30910, 30939, 30996, 13, 13, 54761, 31211, 36384, 35074, 55435, 54919, 37686, 30987, 13, 13, 55437, 31211, 30910, 49685, 54638, 30954, 54855, 54539, 35679, 30946, 49685, 54638, 54855, 54973, 54714, 30939, 30970, 54943, 33599, 56005, 54747, 35679, 30946, 49685, 54638, 56005, 55901, 54714, 30943, 30939, 54943, 33217, 54750, 41189, 30954, 58812, 55555, 35679, 30946, 54750, 41189, 55148, 55555, 33136, 30939, 30939, 55067, 33599, 55344, 54615, 35679, 30946, 54750, 41189, 54809, 56214, 54704, 54641, 30939, 30943, 54943, 33217, 56446, 34582, 30954, 54547, 56365, 35679, 30946, 56446, 34582, 57591, 55086, 54662, 30973, 54943, 33599, 54645, 56890, 55284, 35679, 30946, 56446, 34582, 55066, 55771, 33856, 30966, 30978, 30973, 56519, 30939, 30943, 54943, 33217, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+inputs [支付宝专用]请用最简洁的语言回答如下问题:[Round 1]
+问：福州身份证换证在哪里?
+答： 鼓楼区:华大派出所(鼓楼区华林路15号)、洪山派出所(鼓楼区洪甘路21号)。台江区:鳌峰派出所(台江区亚峰小区11座)、宁化派出所(台江区万寿二道12号)。仓山区:上渡派出所(仓山区堤边里8号)、三叉街派出所(仓山区则徐大道368弄12号)。
+label_ids [-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 30910, 49685, 54638, 30954, 54855, 54539, 35679, 30946, 49685, 54638, 54855, 54973, 54714, 30939, 30970, 54943, 33599, 56005, 54747, 35679, 30946, 49685, 54638, 56005, 55901, 54714, 30943, 30939, 54943, 33217, 54750, 41189, 30954, 58812, 55555, 35679, 30946, 54750, 41189, 55148, 55555, 33136, 30939, 30939, 55067, 33599, 55344, 54615, 35679, 30946, 54750, 41189, 54809, 56214, 54704, 54641, 30939, 30943, 54943, 33217, 56446, 34582, 30954, 54547, 56365, 35679, 30946, 56446, 34582, 57591, 55086, 54662, 30973, 54943, 33599, 54645, 56890, 55284, 35679, 30946, 56446, 34582, 55066, 55771, 33856, 30966, 30978, 30973, 56519, 30939, 30943, 54943, 33217, 2, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100]
+labels 鼓楼区:华大派出所(鼓楼区华林路15号)、洪山派出所(鼓楼区洪甘路21号)。台江区:鳌峰派出所(台江区亚峰小区11座)、宁化派出所(台江区万寿二道12号)。仓山区:上渡派出所(仓山区堤边里8号)、三叉街派出所(仓山区则徐大道368弄12号)。
+query:
+什么是蚂蚁庄园
+query:
+2023年广州市天河区总共招聘多少名编制教师？
+query:
+2023年北京房山区公租房申请登记时间是什么时候？
+query:
+钢材期货是什么
+query:
+湖北高考成绩会发短信吗？
+query:
+2023杭州木兰山茶园免费游需要提前预约吗？
+query:
+福州创业带动就业补贴条件是什么?
+query:
+上海口罩预约购买每人限购多少个？
+query:
+长沙在读大学生落户有补贴吗？
+query:
+南京互换存量房交易登记注意事项有哪些？
+query:
+深圳哪些情形的异地身份证申请不予受理？
+query:
+常州邮政代办交管业务溧阳办理地点有哪些？
+query:
+成都办居住证社保连续购买6个月不是在同一个公司可以吗？
+query:
+广州异地补办身份证要户口簿吗？
+query:
+无锡考驾照要暂住证吗？
+query:
+什么是花呗
+query:
+中国动漫博物馆不预约可以参观吗？
+query:
+办理火车票改签或变更到站时需要身份证件吗？
+query:
+佛山驾驶证转入去哪里办理？
+query:
+青岛市老年人高龄补贴标准是多少？
+query:
+怡山派出所地址在哪？
+query:
+哈尔滨融创雪世界当天去可以买票吗？
+query:
+2023年6月25日北京限号吗？
+query:
+郑州市2023年第6批学历人才生活补贴的申请政策是什么？
+query:
+南京地铁2号线汉中门站首末班车时间是什么时候？
+query:
+深圳市残疾人交社保优惠政策是什么？
+query:
+深圳仙湖植物园春节期间会进行管控吗？
+query:
+石家庄鹿泉区婚姻登记需要多少钱？
+query:
+济南租房落户办理流程是什么？
+query:
+芜湖镜湖区社保卡补办要多久?
+query:
+深圳自来水单位客户过户申请需要哪些资料？
+query:
+苏州地铁4号线转几号线到苏州儿童医院?
+query:
+2023广州港澳通行证办理需要多少钱？
+query:
+2023秋季北京昌平区文德幼儿园招生数量是多少？
+query:
+南宁市人力资源社会保障公共服务中心地址在哪？
+query:
+郑州中原区二胎产假怎么休？
+query:
+上海市 社保怎么缴费
+query:
+个人所得税住房租金有几档?
+query:
+天津和平区摇号申请未通过审核怎么办？
+query:
+2020合作医疗缴费什么时候开始？
+query:
+江苏退休金增加方案出来了吗？
+query:
+2023深圳仙湖植物园花展门票退订规则是什么？
+query:
+昆明市 社保卡怎么查
+query:
+常州社保个人信息变更需要什么资料？
+query:
+安阳县退休人员怎样认证
+query:
+济南不动产登记政务服务大厅受理业务有哪些？
+query:
+2023年光明区购车补贴适用对象有哪些？
+query:
+2021深圳龙岗区妇幼保健院3月招聘联系人是谁？
+query:
+2023春季长沙市芙蓉区教资认定什么时候开始体检？
+query:
+深圳福田区办理健康证需要带什么材料？
+query:
+石家庄行唐县社保卡服务网点电话是多少？
+query:
+济南历城区博物馆要门票吗？
+query:
+济南千佛山风景区晚上免费吗？
+query:
+杭州独生子女证的办理条件是什么？
+query:
+珠海市香洲区公积金个人开户需要本人去吗？
+query:
+广州车牌摇号申请编码能换吗？
+query:
+罗湖教科院附属学校共招聘多少人？
+query:
+东莞市限行规定调整何时生效？
+query:
+辽宁中医药大学附属第二医院2023年招聘对象是哪些人群？
+query:
+绵阳护照小孩能办吗？
+query:
+2023杭州西溪花朝节在虾龙滩可以看到什么花海？
+query:
+厦门铛铛车在哪里上车？
+query:
+北京医保异地就医报销是什么？
+query:
+中国人寿保险股份有限公司广州市分公司招聘穗岁康项目服务人员的工作职责是什么？
+query:
+西安市 怎样申请个人退税
+query:
+北京市城镇职工基本医疗保险待遇是什么？
+query:
+硚口区社保局电话号码是多少？
+query:
+新区办事处的电话是多少？
+query:
+昌平区人力社保局地址在哪？
+query:
+南京驾照到期换证的受理条件有哪些？
+query:
+福州马尾区公租房申请需要哪些材料？
+query:
+武汉开放大学的报名需要什么材料？
+query:
+2023北京石景山区高招体检需要携带哪些材料？
+query:
+2023天津医科大学临床医学院校园开放日在什么时候
+query:
+无锡公积金贷款后能辞职吗？
+query:
+深圳台湾通行证续签办理流程是怎样的？
+query:
+2023杭州错时返岗车票线上申报报销金额是多少？
+query:
+贵阳花溪区违章申诉需要哪些材料？
+query:
+兰州榆中县健康证办理地点在哪？
+query:
+深圳居住证过期半年还可以续签吗？
+query:
+常州小孩港澳通行证办理流程是什么？
+query:
+海外人才落户南京直系亲属户口需要准备什么材料？
+query:
+深圳青青世界门票多少钱?
+query:
+常州金坛区公交老人卡办理材料是什么？
+query:
+2023武汉创造宇宙音乐节门票价格是多少？
+query:
+深圳外资企业办理简单注销需要什么材料？
+query:
+基本医疗保险基金支出是什么
+query:
+成都市 医保异地怎么转移
+query:
+凸性偏好是什么
+query:
+长沙外地车辆是否可以办理ETC？
+query:
+餐饮办理税务登记证的地点在哪？
+query:
+四川省德阳市公安局出入境接待大厅什么时间可以补办德阳护照？
+query:
+四川成飞集成吉文汽车零部件有限公司共招聘多少名钳工？
+query:
+上海申请参加个人非营业性客车额度拍卖有哪两种方式？
+query:
+郑州经开区社保卡异地居住人员办理流程是什么？
+query:
+深圳个人数字人民币分为哪几种类型？
+query:
+成都驾照到期了如何换新驾照？
+query:
+在上海就业的外省市人员办理护照的流程是什么？
+query:
+太原建立公积金单位账户需要什么表格？
+query:
+济南居民养老保险参保去哪办？
+query:
+抚州市 什么是余额自动转入
+query:
+经济适用住房保障方式有几种？
+query:
+郑州紫荆山地铁站有几个出口？
+query:
+上海宝山区友谊路街道共有产权房申请地点在哪里？
+query:
+岭澳社区党群服务中心综合窗口办理地点在哪？
+query:
+南京168路公交雨花台南大门（东）至汇康路站点有哪些？
+query:
+交错电费怎样申请退款？
+query:
+东莞麻涌镇教育办电话是多少？
+query:
+曲靖市 怎么提升花呗额度
+query:
+南京502路运行时间方州广场东至汉中门总站首班车时间是什么时候？
+query:
+租赁市场住房提取公积金分几种情况？
+query:
+市政务中心社保办事大厅咨询电话是多少？
+query:
+绵阳公租房申请要结婚证吗？
+query:
+东莞两个五年入户办理需要满足什么条件？
+query:
+建筑工程施工发包与承包违法行为认定查处管理办法中有哪些情形属于违法发包？
+query:
+南京Y16路公交路线经过三元巷吗？
+query:
+上海医保卡遗失怎么办？
+query:
+青岛莱西市借款申请人及配偶均符合申请公积金贷款缴存条件的公积金贷款额度是多少？
+query:
+南宁青秀区企业老工伤人员纳入工伤保险统筹管理申请怎么办？
+query:
+五万元只存余额宝里一个月收益是多少
+query:
+重庆大足石刻博物馆电话号码是多少？
+query:
+无锡基础退休金是如何计算的？
+query:
+深圳市罗湖区区属事业单位2023招聘高校应届毕业生面试组织是什么？
+query:
+北京生育保险报销规则？
+query:
+带成年人在福州骑电动车会受到什么惩罚？
+query:
+北京香山公园门票淡季多少钱？
+query:
+成都外地人换身份证需要多长时间？
+query:
+重庆居民养老保险前五档分别是多少钱？
+query:
+湖州驾驶证补领办理流程是什么？
+query:
+2023年上半年中小学和幼儿园教师资格考试深圳考区面试报名时间是什么时候？
+query:
+西安秦岭四宝科学公园的免票政策是怎样的？
+query:
+杭州下城区失业保险经办机构在哪？
+query:
+七彩云南欢乐世界门票成人票多少钱？
+query:
+2023年6月22日端午节金鸡湖龙舟赛的举办地址是在哪？
+query:
+北京景山公园残疾人还需要预约吗?
+query:
+南京地铁2号线西安门站首末班车时间是几点？
+query:
+南宁兴宁区出生证明换发条件有哪些？
+query:
+广东省深圳市公安局罗湖区公安分局出入境接待大厅的电话是多少？
+query:
+农村户口在石家庄买房可以落户吗？
+query:
+深圳市龙岗区安良社康中心地址在哪？
+query:
+2023广州如何加大营商环境改革力度？
+query:
+2023外地户口孩子高考政策是什么？
+query:
+个体工商户营业额多少免征增值税？
+query:
+杭州经开区失业保险经办机构的具体地址在哪？
+query:
+太原小店区灵活就业人员养老保险参保办理需要什么材料？
+query:
+广州4050社保申请时间是什么时候？
+query:
+上海计划生育家庭特别扶助金名称叫什么？
+query:
+深圳全日制申请租房补贴条件是什么？
+query:
+成都职工怎么一次性办理需要提供哪些材料？
+query:
+深圳宝安庄边社区工作时间是几点到几点？
+query:
+深圳买房提取公积金需要什么材料？
+query:
+西安公积金偿还商业住房贷款提取办理需要什么材料？
+query:
+2018年劳动法规定的癌症待遇是什么？
+query:
+西安第三套房首付需要付多少？
+query:
+2023合肥民办学校招生网上报名不符合年龄的可以报名吗？
+query:
+绵阳身份证信息变更需要什么材料？
+query:
+宝鸡办港澳通行证能化妆吗？
+query:
+《都挺好》改编自什么小说？
+query:
+东莞麻涌镇办理港澳通行证有哪些注意事项？
+query:
+临时社保卡能否在省平台及国家平台可否直接刷卡记账？
+query:
+成都市 医保每个月反多少钱
+query:
+2023广州怎么续签香港旅游签注？
+query:
+2023杭州企业包车返岗补贴享受对象有哪些？
+query:
+芜湖市老中医院门诊电话号码是多少？
+query:
+2023苏州乐园森林水世界家庭卡办理的领取日期是什么时候？
+query:
+柳州市 什么是企业管家
+query:
+2023中共郴州市委党校人才引进的岗位要求是什么？
+query:
+太原迎泽区小学入学跨区域人户分离可以报名吗?
+query:
+2023年南澳县兵役登记时间是什么时候？
+query:
+失信人住酒店会被拒吗？
+query:
+沈阳首次办理身份证需要满足哪些条件？
+query:
+太原的小孩可以办台湾通行证吗
+query:
+常州城乡居民基本养老保险转入职工基本养老保险的咨询电话是多少？
+query:
+海南支持跨省异地就医定点医疗机构有哪些？
+query:
+合肥公积金咨询热线是多少？
+query:
+青岛领取技能补贴必须有工作吗？
+query:
+上海野生动物园夜场票几点到几点?
+query:
+2023杭州普通话考试上次成绩没出来可以报名吗？
+query:
+成都市泡桐树小学绿舟分校地址在哪？
+query:
+农村五保供养制度是什么
+query:
+个人发票为什么要填写买方税务信息？
+query:
+成都电动车自行车上牌规定是什么？
+query:
+大连积分落户需要上传的落户地址材料是什么？
+query:
+东莞市 怎么激活社保卡
+query:
+常州车管所金坛区办理地点？
+query:
+2023年罗湖区千万元购车补贴汽车促消费活动申请流程是怎样的？
+query:
+成都高新区出入境接待大厅地址及电话是什么？
+query:
+上海野生动物园学生票有年龄限制吗？
+query:
+北京西城区公积金贷款条件是什么？
+query:
+北京北海公园老年人免费吗？
+query:
+北京二类经适房申请需要什么条件？
+query:
+L签文锦渡口岸怎么过关？
+query:
+北京失业保险金每个月几号发放？
+query:
+南京司法裁定不动产转移登记需要满足什么条件？
+query:
+长沙驾驶证过期不换证有什么影响？
+query:
+2023年湖北购车优惠享受条件是什么？
+query:
+南宁事业单位离休人员护理费审核的办理条件是什么？
+query:
+2023年广州市越秀区政务服务数据管理局招聘哪些岗位？
+query:
+南宁稳岗补贴申领办理需要哪些材料？
+query:
+医保电子凭证激活方式有哪些？
+query:
+深圳台湾通行证换证号码会变吗？
+query:
+期满后西安新城区创业人员还可以申请社保补贴吗？
+query:
+2023海口琼山区免费两癌筛查网上预约流程是什么?
+query:
+福州在住院分娩期间婴儿患病的住院费用可以报销吗？
+query:
+2023松江区初中转学需要满足什么条件？
+query:
+天津永利供热公司如何办理用户信息卡？
+query:
+沈阳大东区租赁备案证明办理地点在哪里？
+query:
+爷爷奶奶在长沙有房孙子可以在长沙上学吗？
+query:
+买基金可能亏损吗
+query:
+上海放宽公共租赁房申请标准是什么？
+query:
+济南转业干部落户需要什么材料？
+query:
+芜湖三山区台湾通行证办理需要预约吗？
+query:
+在常州中小学职高技校生怎么办理参保续保?
+query:
+注册营业执照的办理条件是什么？
+query:
+住房公积金贷款计算器网址是什么？
+query:
+咸阳市 退休金怎么算
+query:
+东莞市身份证异地办理的流程是什么？
+query:
+深圳一般纳税人印花税有优惠吗 ?
+query:
+漂单是什么
+query:
+宁波北仑区居住证签注办理需要什么材料？
+query:
+北京东城区公积金封存后怎么提取?
+query:
+2023年广州加大促投资力度的措施什么时候开始实施？
+query:
+重庆电动自行车没有发票可以上牌吗？
+query:
+青岛海牛同沧州雄狮的比赛什么时候开始？
+query:
+曲靖麒麟水乡景区什么时候开始免费？
+query:
+常州小微企业吸纳高校毕业生社保补贴对象是哪类企业？
+query:
+广州首次办理港澳通行证旅游签注要走人工窗口吗？
+query:
+2023杭州住房公积金管理中心招聘的条件是什么？
+query:
+四川科技馆门票没有预约到怎么办？
+query:
+奉节公租房申请条件是什么？
+query:
+西安工伤保险待遇费用零星报销办理地点在哪里？
+query:
+广州市白云区人大源街招聘政府雇员的咨询电话是多少？
+query:
+工伤认定需要提交哪些材料？
+query:
+上海黄浦区共有产权保障房申请咨询受理时间是什么？
+query:
+2023杭州萧山暖春汽车消费补贴能先申报再上牌吗？
+query:
+2023长沙市公安局行政文员招聘的报考资格是什么？
+query:
+铁路工程专业工程师能入户广州吗？
+query:
+珠海市香洲区公积金的可贷额度是多少？
+query:
+上海方塔园地址在哪？
+query:
+南昌市 身份证快到期怎么换
+query:
+办理宁波居住证签注费用是多少?
+query:
+北京Hotel G 极栈酒店位于哪里？
+query:
+2023天津养老保险待遇资格微信自助认证的流程是什么？
+query:
+深圳仙湖植物园有景区简介吗？
+query:
+怎样认证社保
+query:
+杭州城隍阁的相关简介？
+query:
+上海吴淞炮台湾国家湿地公园地址在哪？
+query:
+上海机关事业单位退休人员增加的养老金什么时候才能发放到位？
+query:
+武汉报考国家开放大学需要哪些材料？
+query:
+什么是闪速收款
+query:
+北京海淀区公租房申请需要满足什么条件？
+query:
+个人所得税必须填父母或子女的吗？
+query:
+2023广州融创乐园元宵节活动在哪里购票？
+query:
+芜湖公积金流水在哪里打印？
+query:
+南京儿童医保需要到哪里办理？
+query:
+杭州社保卡有哪些功能？
+query:
+重庆大足公共就业服务机构咨询电话是多少？
+query:
+青羊区随迁子女如何入学？
+query:
+昆明市呈贡区文化馆数字文化在线官网入口是什么？
+query:
+南京168路公交雨花台南大门（东）至汇康路的运营时间是什么？
+query:
+2023崇明区教育局招生咨询电话是多少？
+query:
+西安B类人才可以申请人才公寓吗？
+query:
+青岛公积金失业提取的办理条件？
+query:
+宁波租房提取公积金有哪些条件？
+query:
+已解除失信人可以坐飞机吗？
+query:
+什么是“金九银十”行情
+query:
+福州亭江中学对口哪些小学？
+query:
+怎样添加电子社保卡
+query:
+外籍游客如何预约西安大唐芙蓉园免费门票？
+query:
+上海欢乐谷关于退款有什么规定？
+query:
+2023年广东第二师范学院招聘第一批B类岗位教师怎么报名？
+query:
+珠海医保住院报销需要手续费吗？
+query:
+众筹融资平台是什么
+query:
+汕头龙湖区护照怎么用支付宝网上预约办理？
+query:
+社保怎么年审
+query:
+济南招生迁入落户条件是什么？
+query:
+贵州省图书馆办理普通读者卡需要多少押金？
+query:
+2023南京购车补贴申请材料有哪些？
+query:
+北京医保报销最低多少钱
+query:
+成都市住房公积金怎么提取
+query:
+黄果树景区观光车小孩要票吗？
+query:
+沈阳人才租房补贴申请毕业证要原件吗？
+query:
+绵阳公租房住满五年能卖吗？
+query:
+汕头金平区港澳通行证续签自助机在哪里？
+query:
+驾驶证丢失可以异地补办吗？对以后有影响吗？
+query:
+南充台湾通行证加急流程是什么？
+query:
+2023重庆教师资格证笔试网上报名时间是什么时候？
+query:
+北京大兴区公积金贷款需要满足什么条件？
+query:
+沈阳森林动物园成人票多少钱？
+query:
+2023年春节北京市属公园免费开放吗？
+query:
+深圳外资公司变更能网上全程办理吗?
+query:
+南京玄武区户口迁移办理需要什么材料？
+query:
+深圳居住证可以微信签注吗？
+query:
+无锡大修自住住房提取住房公积金办理材料有哪些？
+query:
+南京公积金缓缴办理材料有哪些？
+query:
+北京新办护照现场怎么办理？
+query:
+厦门思明区补交社保能办居住证吗？
+query:
+杭州市高层次人才A类包括哪些人？
+query:
+龙岗区人民医院健康证和入职体检预约流程是是什么？
+query:
+济南房屋所有权注销登记办理流程是什么？
+query:
+石家庄栾城区婚姻登记处电话是多少？
+query:
+苏州虎丘区积分落户什么时候可以申请？
+query:
+2023合肥蜀山区公办小学入学报名线下审核材料有哪些？
+query:
+汉阳区建行汉阳支行的地址是什么？
+query:
+合肥领取护照在自助机器上怎么领取？
+query:
+青岛职工社保报销流程是什么？
+query:
+2023重庆南岸区外地户口小学入学报名时间是什么时候？
+query:
+2023年广州市番禺区考公务员的报考注意事项？
+query:
+石家庄深泽县婚姻登记处地址？
+query:
+罗源县e福州便民自助服务终端可以提供哪些服务？
+query:
+保定公积金缴存流程是什么？
+query:
+出国需要办签证还是护照？
+query:
+太原结婚证补办要几天？
+query:
+将外省的社保转移至西安市需要满足什么条件？
+query:
+石家庄长安区社保局和公积金电话是多少？
+inputs[支付宝专用]请用最简洁的语言回答如下问题:什么是蚂蚁庄园
+input_ids [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64790, 64792, 790, 39063, 36333, 30996, 55073, 54437, 40697, 40042, 33287, 33163, 31639, 30954, 35318, 41069, 46980]
+inputs [支付宝专用]请用最简洁的语言回答如下问题:什么是蚂蚁庄园
+label_ids [64790, 64792, 30910, 41069, 46980, 41680, 33053, 39063, 32488, 39330, 38346, 35439, 32033, 31155]
+Running tokenizer on train dataset: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 5726/5726 [00:03<00:00, 1759.75 examples/s]
+Running tokenizer on prediction dataset: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████| 315/315 [00:00<00:00, 7332.46 examples/s]
+[INFO|trainer.py:577] 2024-01-23 22:12:53,659 >> max_steps is given, it will override any value given in num_train_epochs
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+01/23/2024 22:12:54 - WARNING - transformers_modules.chatglm2-6b.modeling_chatglm - `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+[INFO|trainer.py:1786] 2024-01-23 22:12:54,280 >> ***** Running training *****
+[INFO|trainer.py:1787] 2024-01-23 22:12:54,281 >>   Num examples = 5,725
+[INFO|trainer.py:1788] 2024-01-23 22:12:54,281 >>   Num Epochs = 6
+[INFO|trainer.py:1789] 2024-01-23 22:12:54,281 >>   Instantaneous batch size per device = 1
+[INFO|trainer.py:1790] 2024-01-23 22:12:54,281 >>   Total train batch size (w. parallel, distributed & accumulation) = 16
+[INFO|trainer.py:1791] 2024-01-23 22:12:54,281 >>   Gradient Accumulation steps = 16
+[INFO|trainer.py:1792] 2024-01-23 22:12:54,281 >>   Total optimization steps = 2,000
+[INFO|trainer.py:1793] 2024-01-23 22:12:54,281 >>   Number of trainable parameters = 1,835,008
+[INFO|integrations.py:727] 2024-01-23 22:12:54,311 >> Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+  0%|                                                                                                                                                                   | 0/2000 [00:00<?, ?it/s]/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+
+
+
+
+
+
+
+
+  0%|▋                                                                                                                                                        | 9/2000 [00:42<2:33:44,  4.63s/it]
+
+
+
+
+
+
+
+
+
+
+  1%|█▍                                                                                                                                                      | 19/2000 [01:28<2:32:09,  4.61s/it]
+
+
+
+
+
+
+
+
+
+
+  1%|██▏                                                                                                                                                     | 29/2000 [02:14<2:30:10,  4.57s/it]
+
+
+
+
+
+
+
+
+
+
+  2%|██▉                                                                                                                                                     | 39/2000 [03:00<2:30:33,  4.61s/it]
+
+
+
+
+
+
+
+
+
+
+  2%|███▋                                                                                                                                                    | 49/2000 [03:45<2:28:08,  4.56s/it]
+
+
+
+
+
+
+
+
+
+
+  3%|████▍                                                                                                                                                   | 59/2000 [04:31<2:28:05,  4.58s/it]
+
+
+
+
+
+
+
+
+
+
+  3%|█████▏                                                                                                                                                  | 69/2000 [05:17<2:26:26,  4.55s/it]
+
+
+
+
+
+
+
+
+
+
+  4%|██████                                                                                                                                                  | 79/2000 [06:03<2:26:38,  4.58s/it]
+
+
+
+
+
+
+
+
+
+
+  4%|██████▊                                                                                                                                                 | 89/2000 [06:48<2:25:46,  4.58s/it]
+
+
+
+
+
+
+
+
+
+
+  5%|███████▌                                                                                                                                                | 99/2000 [07:34<2:25:49,  4.60s/it]
+
+
+
+
+
+
+
+
+
+
+  5%|████████▏                                                                                                                                              | 109/2000 [08:20<2:23:21,  4.55s/it]
+
+
+
+
+
+
+
+
+
+
+  6%|████████▉                                                                                                                                              | 119/2000 [09:05<2:22:21,  4.54s/it]
+
+
+
+
+
+
+
+
+
+
+  6%|█████████▋                                                                                                                                             | 129/2000 [09:51<2:22:40,  4.58s/it]
+
+
+
+
+
+
+
+
+
+
+  7%|██████████▍                                                                                                                                            | 139/2000 [10:37<2:22:32,  4.60s/it]
+
+
+
+
+
+
+
+
+
+
+  7%|███████████▏                                                                                                                                           | 149/2000 [11:23<2:22:23,  4.62s/it]
+
+
+
+
+
+
+
+
+
+
+  8%|████████████                                                                                                                                           | 159/2000 [12:10<2:21:23,  4.61s/it]
+
+
+
+
+
+
+
+
+
+
+  8%|████████████▊                                                                                                                                          | 169/2000 [12:55<2:18:44,  4.55s/it]
+
+
+
+
+
+
+
+
+
+
+  9%|█████████████▌                                                                                                                                         | 179/2000 [13:41<2:18:31,  4.56s/it]
+
+
+
+
+
+
+
+
+
+
+  9%|██████████████▎                                                                                                                                        | 189/2000 [14:26<2:17:07,  4.54s/it]
+
+
+
+
+
+
+
+
+
+
+
+ 10%|███████████████                                                                                                                                        | 200/2000 [15:16<2:17:10,  4.57s/it]
+
+
+
+
+
+
+
+
+
+ 10%|███████████████▊                                                                                                                                       | 209/2000 [15:57<2:15:53,  4.55s/it]
+
+
+
+
+
+
+
+
+
+
+ 11%|████████████████▌                                                                                                                                      | 219/2000 [16:43<2:15:08,  4.55s/it]
+
+
+
+
+ 11%|████████████████▊                                                                                                                                      | 223/2000 [17:01<2:14:50,  4.55s/it]Traceback (most recent call last):
+  File "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py", line 478, in <module>
+    main()
+  File "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py", line 390, in main
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/trainer.py", line 1645, in train
+    return inner_training_loop(
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/trainer.py", line 1943, in _inner_training_loop
+    and (torch.isnan(tr_loss_step) or torch.isinf(tr_loss_step))
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py", line 478, in <module>
+    main()
+  File "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py", line 390, in main
+    train_result = trainer.train(resume_from_checkpoint=checkpoint)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/trainer.py", line 1645, in train
+    return inner_training_loop(
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/trainer.py", line 1943, in _inner_training_loop
+    and (torch.isnan(tr_loss_step) or torch.isinf(tr_loss_step))
+KeyboardInterrupt

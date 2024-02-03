@@ -1,0 +1,128 @@
+
+01/24/2024 11:27:52 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/datasets/load.py:2483: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+[INFO|configuration_utils.py:667] 2024-01-24 11:27:54,480 >> loading configuration file /home/ubuntu/Documents/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:667] 2024-01-24 11:27:54,482 >> loading configuration file /home/ubuntu/Documents/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:725] 2024-01-24 11:27:54,482 >> Model config ChatGLMConfig {
+  "_name_or_path": "/home/ubuntu/Documents/ai/model/chatglm2-6b",
+  "add_bias_linear": false,
+  "add_qkv_bias": true,
+  "apply_query_key_layer_scaling": true,
+  "apply_residual_connection_post_layernorm": false,
+  "architectures": [
+    "ChatGLMModel"
+  ],
+  "attention_dropout": 0.0,
+  "attention_softmax_in_fp32": true,
+  "auto_map": {
+    "AutoConfig": "configuration_chatglm.ChatGLMConfig",
+    "AutoModel": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForCausalLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSeq2SeqLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSequenceClassification": "modeling_chatglm.ChatGLMForSequenceClassification"
+  },
+  "bias_dropout_fusion": true,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "ffn_hidden_size": 13696,
+  "fp32_residual_connection": false,
+  "hidden_dropout": 0.0,
+  "hidden_size": 4096,
+  "kv_channels": 128,
+  "layernorm_epsilon": 1e-05,
+  "model_type": "chatglm",
+  "multi_query_attention": true,
+  "multi_query_group_num": 2,
+  "num_attention_heads": 32,
+  "num_layers": 28,
+  "original_rope": true,
+  "pad_token_id": 0,
+  "padded_vocab_size": 65024,
+  "post_layer_norm": true,
+  "pre_seq_len": null,
+  "prefix_projection": false,
+  "quantization_bit": 0,
+  "rmsnorm": true,
+  "seq_length": 32768,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.30.2",
+  "use_cache": true,
+  "vocab_size": 65024
+}
+[INFO|tokenization_utils_base.py:1821] 2024-01-24 11:27:54,484 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:1821] 2024-01-24 11:27:54,484 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:1821] 2024-01-24 11:27:54,484 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:1821] 2024-01-24 11:27:54,484 >> loading file tokenizer_config.json
+[INFO|modeling_utils.py:2575] 2024-01-24 11:27:54,525 >> loading weights file /home/ubuntu/Documents/ai/model/chatglm2-6b/pytorch_model.bin.index.json
+[INFO|configuration_utils.py:577] 2024-01-24 11:27:54,526 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+
+Loading checkpoint shards:  71%|████████████████████████████████████████████████▌                   | 5/7 [00:03<00:01,  1.40it/s]
+Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████| 7/7 [00:04<00:00,  1.46it/s]
+[INFO|modeling_utils.py:3295] 2024-01-24 11:27:59,358 >> All model checkpoint weights were used when initializing ChatGLMForConditionalGeneration.
+[WARNING|modeling_utils.py:3297] 2024-01-24 11:27:59,358 >> Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /home/ubuntu/Documents/ai/model/chatglm2-6b and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[INFO|modeling_utils.py:2927] 2024-01-24 11:27:59,359 >> Generation config file not found, using a generation config created from the model config.
+prefix: [支付宝专用]
+    请用最简洁的语言回答如下问题,不要重复问题，如果你不清楚这个问题的答案，就说'对不起，根据参考资料无法回答:'
+inputs[支付宝专用]
+    请用最简洁的语言回答如下问题,不要重复问题，如果你不清楚这个问题的答案，就说'对不起，根据参考资料无法回答:'什么是蚂蚁庄园
+input_ids [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64790, 64792, 790, 39063, 36333, 30996, 13, 296, 55073, 54437, 40697, 40042, 33287, 33163, 31639, 30932, 31844, 35287, 31639, 31123, 32763, 43082, 31646, 32890, 33161, 31123, 43449, 30953, 43279, 31123, 31793, 33214, 32315, 32067, 33287, 29552, 35318, 41069, 46980]
+inputs [支付宝专用]
+    请用最简洁的语言回答如下问题,不要重复问题，如果你不清楚这个问题的答案，就说'对不起，根据参考资料无法回答:'什么是蚂蚁庄园
+label_ids [64790, 64792, 30910, 41069, 46980, 41680, 33053, 39063, 32488, 39330, 38346, 35439, 32033, 31155]
+labels 蚂蚁庄园是一款基于支付宝支付行为的农场养成游戏。
+01/24/2024 11:28:03 - INFO - __main__ - *** Predict ***
+Running tokenizer on prediction dataset: 100%|███████████████████████████████████████████| 14/14 [00:00<00:00, 2215.52 examples/s]
+[INFO|trainer.py:3200] 2024-01-24 11:28:03,260 >> ***** Running Prediction *****
+[INFO|trainer.py:3202] 2024-01-24 11:28:03,260 >>   Num examples = 14
+[INFO|trainer.py:3205] 2024-01-24 11:28:03,260 >>   Batch size = 4
+[INFO|configuration_utils.py:577] 2024-01-24 11:28:03,262 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  0%|                                                                                                       | 0/4 [00:00<?, ?it/s][INFO|configuration_utils.py:577] 2024-01-24 11:28:07,443 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 50%|███████████████████████████████████████████████▌                                               | 2/4 [00:04<00:04,  2.31s/it][INFO|configuration_utils.py:577] 2024-01-24 11:28:12,071 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 75%|███████████████████████████████████████████████████████████████████████▎                       | 3/4 [00:20<00:08,  8.02s/it][INFO|configuration_utils.py:577] 2024-01-24 11:28:28,076 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+01/24/2024 11:28:35 - DEBUG - jieba - Building prefix dict from the default dictionary ...
+01/24/2024 11:28:35 - DEBUG - jieba - Loading model from cache /tmp/jieba.cache
+01/24/2024 11:28:35 - DEBUG - jieba - Loading model cost 0.274 seconds.
+01/24/2024 11:28:35 - DEBUG - jieba - Prefix dict has been built successfully.
+***** predict metrics *****
+  predict_bleu-4             =     3.9766
+  predict_rouge-1            =    19.1695
+  predict_rouge-2            =     3.2671
+  predict_rouge-l            =    14.6917
+  predict_runtime            = 0:00:32.56
+  predict_samples            =         14
+  predict_samples_per_second =       0.43
+  predict_steps_per_second   =      0.123
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:28<00:00,  7.80s/it]Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.274 seconds.
+Prefix dict has been built successfully.
+100%|███████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:28<00:00,  7.10s/it]

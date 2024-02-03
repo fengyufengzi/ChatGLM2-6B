@@ -1,0 +1,581 @@
+
+01/24/2024 11:48:59 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/datasets/load.py:2483: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+[INFO|configuration_utils.py:667] 2024-01-24 11:49:00,946 >> loading configuration file /home/ubuntu/Documents/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:667] 2024-01-24 11:49:00,947 >> loading configuration file /home/ubuntu/Documents/ai/model/chatglm2-6b/config.json
+[INFO|configuration_utils.py:725] 2024-01-24 11:49:00,947 >> Model config ChatGLMConfig {
+  "_name_or_path": "/home/ubuntu/Documents/ai/model/chatglm2-6b",
+  "add_bias_linear": false,
+  "add_qkv_bias": true,
+  "apply_query_key_layer_scaling": true,
+  "apply_residual_connection_post_layernorm": false,
+  "architectures": [
+    "ChatGLMModel"
+  ],
+  "attention_dropout": 0.0,
+  "attention_softmax_in_fp32": true,
+  "auto_map": {
+    "AutoConfig": "configuration_chatglm.ChatGLMConfig",
+    "AutoModel": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForCausalLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSeq2SeqLM": "modeling_chatglm.ChatGLMForConditionalGeneration",
+    "AutoModelForSequenceClassification": "modeling_chatglm.ChatGLMForSequenceClassification"
+  },
+  "bias_dropout_fusion": true,
+  "classifier_dropout": null,
+  "eos_token_id": 2,
+  "ffn_hidden_size": 13696,
+  "fp32_residual_connection": false,
+  "hidden_dropout": 0.0,
+  "hidden_size": 4096,
+  "kv_channels": 128,
+  "layernorm_epsilon": 1e-05,
+  "model_type": "chatglm",
+  "multi_query_attention": true,
+  "multi_query_group_num": 2,
+  "num_attention_heads": 32,
+  "num_layers": 28,
+  "original_rope": true,
+  "pad_token_id": 0,
+  "padded_vocab_size": 65024,
+  "post_layer_norm": true,
+  "pre_seq_len": null,
+  "prefix_projection": false,
+  "quantization_bit": 0,
+  "rmsnorm": true,
+  "seq_length": 32768,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.30.2",
+  "use_cache": true,
+  "vocab_size": 65024
+}
+[INFO|tokenization_utils_base.py:1821] 2024-01-24 11:49:00,948 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:1821] 2024-01-24 11:49:00,948 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:1821] 2024-01-24 11:49:00,948 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:1821] 2024-01-24 11:49:00,948 >> loading file tokenizer_config.json
+[INFO|modeling_utils.py:2575] 2024-01-24 11:49:00,991 >> loading weights file /home/ubuntu/Documents/ai/model/chatglm2-6b/pytorch_model.bin.index.json
+[INFO|configuration_utils.py:577] 2024-01-24 11:49:00,992 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+
+Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████| 7/7 [00:04<00:00,  1.47it/s]
+[INFO|modeling_utils.py:3295] 2024-01-24 11:49:05,793 >> All model checkpoint weights were used when initializing ChatGLMForConditionalGeneration.
+[WARNING|modeling_utils.py:3297] 2024-01-24 11:49:05,793 >> Some weights of ChatGLMForConditionalGeneration were not initialized from the model checkpoint at /home/ubuntu/Documents/ai/model/chatglm2-6b and are newly initialized: ['transformer.prefix_encoder.embedding.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[INFO|modeling_utils.py:2927] 2024-01-24 11:49:05,794 >> Generation config file not found, using a generation config created from the model config.
+Quantized to 8 bit
+prefix: [支付宝专用]
+    请用最简洁的语言回答‘###’后面的问题,回答中不要重复问题内容，如果你不清楚这个问题的答案，就说'对不起，根据参考资料无法回答:'
+    ###
+inputs[支付宝专用]
+    请用最简洁的语言回答‘###’后面的问题,回答中不要重复问题内容，如果你不清楚这个问题的答案，就说'对不起，根据参考资料无法回答:'
+    ###什么是蚂蚁庄园
+input_ids [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64790, 64792, 790, 39063, 36333, 30996, 13, 296, 55073, 54437, 40697, 40042, 33287, 31028, 1754, 31010, 30963, 35005, 32184, 30932, 33287, 54538, 31844, 35287, 31639, 31795, 31123, 32763, 43082, 31646, 32890, 33161, 31123, 43449, 30953, 43279, 31123, 31793, 33214, 32315, 32067, 33287, 29552, 13, 296, 1754, 31010, 35318, 41069, 46980]
+inputs [支付宝专用]
+    请用最简洁的语言回答‘###’后面的问题,回答中不要重复问题内容，如果你不清楚这个问题的答案，就说'对不起，根据参考资料无法回答:'
+    ###什么是蚂蚁庄园
+label_ids [64790, 64792, 30910, 41069, 46980, 41680, 33053, 39063, 32488, 39330, 38346, 35439, 32033, 31155]
+labels 蚂蚁庄园是一款基于支付宝支付行为的农场养成游戏。
+01/24/2024 11:49:09 - INFO - __main__ - *** Predict ***
+Running tokenizer on prediction dataset: 100%|█████████████████████████████████████████| 315/315 [00:00<00:00, 6132.05 examples/s]
+[INFO|trainer.py:3200] 2024-01-24 11:49:09,785 >> ***** Running Prediction *****
+[INFO|trainer.py:3202] 2024-01-24 11:49:09,785 >>   Num examples = 315
+[INFO|trainer.py:3205] 2024-01-24 11:49:09,785 >>   Batch size = 4
+[INFO|configuration_utils.py:577] 2024-01-24 11:49:09,787 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  0%|                                                                                                      | 0/79 [00:00<?, ?it/s][INFO|configuration_utils.py:577] 2024-01-24 11:49:26,256 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  3%|██▍                                                                                           | 2/79 [00:09<05:52,  4.58s/it][INFO|configuration_utils.py:577] 2024-01-24 11:49:35,406 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  4%|███▌                                                                                          | 3/79 [00:24<11:27,  9.04s/it][INFO|configuration_utils.py:577] 2024-01-24 11:49:50,706 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  5%|████▊                                                                                         | 4/79 [00:31<10:18,  8.25s/it][INFO|configuration_utils.py:577] 2024-01-24 11:49:57,613 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  6%|█████▉                                                                                        | 5/79 [00:36<08:55,  7.24s/it][INFO|configuration_utils.py:577] 2024-01-24 11:50:02,972 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  8%|███████▏                                                                                      | 6/79 [00:52<12:03,  9.92s/it][INFO|configuration_utils.py:577] 2024-01-24 11:50:18,271 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+  9%|████████▎                                                                                     | 7/79 [01:07<13:58, 11.65s/it][INFO|configuration_utils.py:577] 2024-01-24 11:50:33,576 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 10%|█████████▌                                                                                    | 8/79 [01:15<12:20, 10.43s/it][INFO|configuration_utils.py:577] 2024-01-24 11:50:41,361 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 11%|██████████▋                                                                                   | 9/79 [01:24<11:54, 10.20s/it][INFO|configuration_utils.py:577] 2024-01-24 11:50:51,053 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 13%|███████████▊                                                                                 | 10/79 [01:35<11:45, 10.23s/it][INFO|configuration_utils.py:577] 2024-01-24 11:51:01,339 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 14%|████████████▉                                                                                | 11/79 [01:49<12:54, 11.39s/it][INFO|configuration_utils.py:577] 2024-01-24 11:51:15,387 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 15%|██████████████▏                                                                              | 12/79 [02:04<14:02, 12.58s/it][INFO|configuration_utils.py:577] 2024-01-24 11:51:30,695 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 16%|███████████████▎                                                                             | 13/79 [02:09<11:18, 10.29s/it][INFO|configuration_utils.py:577] 2024-01-24 11:51:35,687 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 18%|████████████████▍                                                                            | 14/79 [02:20<11:15, 10.39s/it][INFO|configuration_utils.py:577] 2024-01-24 11:51:46,333 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 19%|█████████████████▋                                                                           | 15/79 [02:24<09:13,  8.64s/it][INFO|configuration_utils.py:577] 2024-01-24 11:51:50,907 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 20%|██████████████████▊                                                                          | 16/79 [02:31<08:23,  7.99s/it][INFO|configuration_utils.py:577] 2024-01-24 11:51:57,383 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 22%|████████████████████                                                                         | 17/79 [02:46<10:31, 10.19s/it][INFO|configuration_utils.py:577] 2024-01-24 11:52:12,688 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 23%|█████████████████████▏                                                                       | 18/79 [02:55<10:09,  9.99s/it][INFO|configuration_utils.py:577] 2024-01-24 11:52:22,200 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 24%|██████████████████████▎                                                                      | 19/79 [03:07<10:33, 10.56s/it][INFO|configuration_utils.py:577] 2024-01-24 11:52:34,101 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 25%|███████████████████████▌                                                                     | 20/79 [03:14<09:13,  9.39s/it][INFO|configuration_utils.py:577] 2024-01-24 11:52:40,756 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 27%|████████████████████████▋                                                                    | 21/79 [03:27<10:00, 10.36s/it][INFO|configuration_utils.py:577] 2024-01-24 11:52:53,369 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 28%|█████████████████████████▉                                                                   | 22/79 [03:37<09:45, 10.26s/it][INFO|configuration_utils.py:577] 2024-01-24 11:53:03,418 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 29%|███████████████████████████                                                                  | 23/79 [03:40<07:31,  8.06s/it][INFO|configuration_utils.py:577] 2024-01-24 11:53:06,333 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 30%|████████████████████████████▎                                                                | 24/79 [03:49<07:50,  8.55s/it][INFO|configuration_utils.py:577] 2024-01-24 11:53:16,023 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 32%|█████████████████████████████▍                                                               | 25/79 [04:05<09:31, 10.57s/it][INFO|configuration_utils.py:577] 2024-01-24 11:53:31,325 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 33%|██████████████████████████████▌                                                              | 26/79 [04:09<07:40,  8.69s/it][INFO|configuration_utils.py:577] 2024-01-24 11:53:35,604 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 34%|███████████████████████████████▊                                                             | 27/79 [04:24<09:14, 10.67s/it][INFO|configuration_utils.py:577] 2024-01-24 11:53:50,905 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 35%|████████████████████████████████▉                                                            | 28/79 [04:31<08:11,  9.64s/it][INFO|configuration_utils.py:577] 2024-01-24 11:53:58,155 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 37%|██████████████████████████████████▏                                                          | 29/79 [04:38<07:09,  8.59s/it][INFO|configuration_utils.py:577] 2024-01-24 11:54:04,276 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 38%|███████████████████████████████████▎                                                         | 30/79 [04:53<08:39, 10.60s/it][INFO|configuration_utils.py:577] 2024-01-24 11:54:19,581 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 39%|████████████████████████████████████▍                                                        | 31/79 [05:08<09:36, 12.01s/it][INFO|configuration_utils.py:577] 2024-01-24 11:54:34,885 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 41%|█████████████████████████████████████▋                                                       | 32/79 [05:23<10:11, 13.00s/it][INFO|configuration_utils.py:577] 2024-01-24 11:54:50,189 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 42%|██████████████████████████████████████▊                                                      | 33/79 [05:33<09:16, 12.10s/it][INFO|configuration_utils.py:577] 2024-01-24 11:55:00,177 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 43%|████████████████████████████████████████                                                     | 34/79 [05:37<07:11,  9.59s/it][INFO|configuration_utils.py:577] 2024-01-24 11:55:03,921 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 44%|█████████████████████████████████████████▏                                                   | 35/79 [05:46<06:50,  9.34s/it][INFO|configuration_utils.py:577] 2024-01-24 11:55:12,660 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 46%|██████████████████████████████████████████▍                                                  | 36/79 [05:57<07:09,  9.98s/it][INFO|configuration_utils.py:577] 2024-01-24 11:55:24,142 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 47%|███████████████████████████████████████████▌                                                 | 37/79 [06:13<08:06, 11.58s/it][INFO|configuration_utils.py:577] 2024-01-24 11:55:39,445 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 48%|████████████████████████████████████████████▋                                                | 38/79 [06:22<07:24, 10.83s/it][INFO|configuration_utils.py:577] 2024-01-24 11:55:48,540 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 49%|█████████████████████████████████████████████▉                                               | 39/79 [06:32<07:05, 10.63s/it][INFO|configuration_utils.py:577] 2024-01-24 11:55:58,711 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 51%|███████████████████████████████████████████████                                              | 40/79 [06:45<07:22, 11.35s/it][INFO|configuration_utils.py:577] 2024-01-24 11:56:11,749 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 52%|████████████████████████████████████████████████▎                                            | 41/79 [06:55<06:54, 10.91s/it][INFO|configuration_utils.py:577] 2024-01-24 11:56:21,623 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 53%|█████████████████████████████████████████████████▍                                           | 42/79 [07:10<07:32, 12.23s/it][INFO|configuration_utils.py:577] 2024-01-24 11:56:36,932 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 54%|██████████████████████████████████████████████████▌                                          | 43/79 [07:21<07:00, 11.68s/it][INFO|configuration_utils.py:577] 2024-01-24 11:56:47,341 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 56%|███████████████████████████████████████████████████▊                                         | 44/79 [07:26<05:44,  9.84s/it][INFO|configuration_utils.py:577] 2024-01-24 11:56:52,869 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 57%|████████████████████████████████████████████████████▉                                        | 45/79 [07:39<06:02, 10.67s/it][INFO|configuration_utils.py:577] 2024-01-24 11:57:05,486 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 58%|██████████████████████████████████████████████████████▏                                      | 46/79 [07:54<06:38, 12.06s/it][INFO|configuration_utils.py:577] 2024-01-24 11:57:20,794 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 59%|███████████████████████████████████████████████████████▎                                     | 47/79 [08:09<06:57, 13.04s/it][INFO|configuration_utils.py:577] 2024-01-24 11:57:36,104 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 61%|████████████████████████████████████████████████████████▌                                    | 48/79 [08:22<06:38, 12.86s/it][INFO|configuration_utils.py:577] 2024-01-24 11:57:48,542 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 62%|█████████████████████████████████████████████████████████▋                                   | 49/79 [08:36<06:39, 13.31s/it][INFO|configuration_utils.py:577] 2024-01-24 11:58:02,894 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 63%|██████████████████████████████████████████████████████████▊                                  | 50/79 [08:51<06:43, 13.91s/it][INFO|configuration_utils.py:577] 2024-01-24 11:58:18,203 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 65%|████████████████████████████████████████████████████████████                                 | 51/79 [09:04<06:16, 13.43s/it][INFO|configuration_utils.py:577] 2024-01-24 11:58:30,521 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 66%|█████████████████████████████████████████████████████████████▏                               | 52/79 [09:11<05:14, 11.65s/it][INFO|configuration_utils.py:577] 2024-01-24 11:58:38,010 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 67%|██████████████████████████████████████████████████████████████▍                              | 53/79 [09:27<05:31, 12.75s/it][INFO|configuration_utils.py:577] 2024-01-24 11:58:53,320 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 68%|███████████████████████████████████████████████████████████████▌                             | 54/79 [09:38<05:06, 12.24s/it][INFO|configuration_utils.py:577] 2024-01-24 11:59:04,384 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 70%|████████████████████████████████████████████████████████████████▋                            | 55/79 [09:53<05:15, 13.16s/it][INFO|configuration_utils.py:577] 2024-01-24 11:59:19,692 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 71%|█████████████████████████████████████████████████████████████████▉                           | 56/79 [09:58<04:07, 10.76s/it][INFO|configuration_utils.py:577] 2024-01-24 11:59:24,863 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 72%|███████████████████████████████████████████████████████████████████                          | 57/79 [10:08<03:47, 10.35s/it][INFO|configuration_utils.py:577] 2024-01-24 11:59:34,261 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 73%|████████████████████████████████████████████████████████████████████▎                        | 58/79 [10:21<03:55, 11.23s/it][INFO|configuration_utils.py:577] 2024-01-24 11:59:47,537 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 75%|█████████████████████████████████████████████████████████████████████▍                       | 59/79 [10:36<04:09, 12.45s/it][INFO|configuration_utils.py:577] 2024-01-24 12:00:02,845 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 76%|██████████████████████████████████████████████████████████████████████▋                      | 60/79 [10:41<03:14, 10.23s/it][INFO|configuration_utils.py:577] 2024-01-24 12:00:07,897 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 77%|███████████████████████████████████████████████████████████████████████▊                     | 61/79 [10:49<02:51,  9.53s/it][INFO|configuration_utils.py:577] 2024-01-24 12:00:15,802 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 78%|████████████████████████████████████████████████████████████████████████▉                    | 62/79 [11:03<03:02, 10.73s/it][INFO|configuration_utils.py:577] 2024-01-24 12:00:29,315 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 80%|██████████████████████████████████████████████████████████████████████████▏                  | 63/79 [11:14<02:53, 10.86s/it][INFO|configuration_utils.py:577] 2024-01-24 12:00:40,498 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 81%|███████████████████████████████████████████████████████████████████████████▎                 | 64/79 [11:20<02:22,  9.53s/it][INFO|configuration_utils.py:577] 2024-01-24 12:00:46,916 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 82%|████████████████████████████████████████████████████████████████████████████▌                | 65/79 [11:29<02:10,  9.35s/it][INFO|configuration_utils.py:577] 2024-01-24 12:00:55,835 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 84%|█████████████████████████████████████████████████████████████████████████████▋               | 66/79 [11:40<02:07,  9.81s/it][INFO|configuration_utils.py:577] 2024-01-24 12:01:06,722 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 85%|██████████████████████████████████████████████████████████████████████████████▊              | 67/79 [11:55<02:17, 11.46s/it][INFO|configuration_utils.py:577] 2024-01-24 12:01:22,033 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 86%|████████████████████████████████████████████████████████████████████████████████             | 68/79 [12:08<02:11, 11.97s/it][INFO|configuration_utils.py:577] 2024-01-24 12:01:35,187 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 87%|█████████████████████████████████████████████████████████████████████████████████▏           | 69/79 [12:19<01:55, 11.50s/it][INFO|configuration_utils.py:577] 2024-01-24 12:01:45,597 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 89%|██████████████████████████████████████████████████████████████████████████████████▍          | 70/79 [12:34<01:53, 12.64s/it][INFO|configuration_utils.py:577] 2024-01-24 12:02:00,906 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 90%|███████████████████████████████████████████████████████████████████████████████████▌         | 71/79 [12:38<01:20, 10.10s/it][INFO|configuration_utils.py:577] 2024-01-24 12:02:05,067 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 91%|████████████████████████████████████████████████████████████████████████████████████▊        | 72/79 [12:54<01:21, 11.66s/it][INFO|configuration_utils.py:577] 2024-01-24 12:02:20,376 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 92%|█████████████████████████████████████████████████████████████████████████████████████▉       | 73/79 [13:01<01:01, 10.30s/it][INFO|configuration_utils.py:577] 2024-01-24 12:02:27,510 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 94%|███████████████████████████████████████████████████████████████████████████████████████      | 74/79 [13:16<00:58, 11.79s/it][INFO|configuration_utils.py:577] 2024-01-24 12:02:42,763 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 95%|████████████████████████████████████████████████████████████████████████████████████████▎    | 75/79 [13:31<00:51, 12.84s/it][INFO|configuration_utils.py:577] 2024-01-24 12:02:58,071 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 96%|█████████████████████████████████████████████████████████████████████████████████████████▍   | 76/79 [13:43<00:37, 12.44s/it][INFO|configuration_utils.py:577] 2024-01-24 12:03:09,553 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 97%|██████████████████████████████████████████████████████████████████████████████████████████▋  | 77/79 [13:58<00:26, 13.30s/it][INFO|configuration_utils.py:577] 2024-01-24 12:03:24,863 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+ 99%|███████████████████████████████████████████████████████████████████████████████████████████▊ | 78/79 [14:13<00:13, 13.90s/it][INFO|configuration_utils.py:577] 2024-01-24 12:03:40,173 >> Generate config GenerationConfig {
+  "_from_model_config": true,
+  "eos_token_id": 2,
+  "pad_token_id": 0,
+  "transformers_version": "4.30.2"
+}
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 79/79 [14:20<00:00, 11.69s/it]
+01/24/2024 12:03:47 - DEBUG - jieba - Building prefix dict from the default dictionary ...
+01/24/2024 12:03:47 - DEBUG - jieba - Loading model from cache /tmp/jieba.cache
+01/24/2024 12:03:47 - DEBUG - jieba - Loading model cost 0.273 seconds.
+01/24/2024 12:03:47 - DEBUG - jieba - Prefix dict has been built successfully.
+***** predict metrics *****
+  predict_bleu-4             =     6.7633
+  predict_rouge-1            =    24.1454
+  predict_rouge-2            =     6.3903
+  predict_rouge-l            =    16.7941
+  predict_runtime            = 0:14:38.20
+  predict_samples            =        315
+  predict_samples_per_second =      0.359
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 79/79 [14:20<00:00, 11.69s/it]Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.273 seconds.
+Prefix dict has been built successfully.
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 79/79 [14:21<00:00, 10.91s/it]

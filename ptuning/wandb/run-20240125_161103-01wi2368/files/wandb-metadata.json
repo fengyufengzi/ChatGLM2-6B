@@ -1,0 +1,244 @@
+{
+    "os": "Linux-6.5.0-14-generic-x86_64-with-glibc2.35",
+    "python": "3.10.13",
+    "heartbeatAt": "2024-01-25T08:11:13.885535",
+    "startedAt": "2024-01-25T08:11:03.915755",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--do_eval",
+        "--train_file",
+        "../data/train.json",
+        "--validation_file",
+        "../data/val.json",
+        "--test_file",
+        "../data/val.json",
+        "--preprocessing_num_workers",
+        "1",
+        "--prompt_column",
+        "query",
+        "--response_column",
+        "answer",
+        "--overwrite_cache",
+        "--model_name_or_path",
+        "/home/ubuntu/Documents/ai/model/chatglm2-6b",
+        "--output_dir",
+        "output/adgen-chatglm2-6b-pt-128-2e-2",
+        "--overwrite_output_dir",
+        "--max_source_length",
+        "64",
+        "--max_target_length",
+        "256",
+        "--per_device_train_batch_size",
+        "1",
+        "--per_device_eval_batch_size",
+        "4",
+        "--gradient_accumulation_steps",
+        "16",
+        "--predict_with_generate",
+        "--max_steps",
+        "2100",
+        "--logging_steps",
+        "10",
+        "--save_steps",
+        "700",
+        "--learning_rate",
+        "2e-2",
+        "--pre_seq_len",
+        "128",
+        "--quantization_bit=8",
+        "--report_to",
+        "wandb"
+    ],
+    "state": "running",
+    "program": "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py",
+    "codePathLocal": "main.py",
+    "codePath": "ptuning/main.py",
+    "git": {
+        "remote": "https://github.com/fengyufengzi/ChatGLM2-6B.git",
+        "commit": "284cb911a1f58200ef887669fc0b863d782e28db"
+    },
+    "email": "4328521+fengyufengzi@users.noreply.github.com",
+    "root": "/home/ubuntu/Documents/ai/ChatGLM2-6B",
+    "host": "marsen",
+    "username": "ubuntu",
+    "executable": "/home/ubuntu/miniconda3/envs/chatglm2/bin/python",
+    "cpu_count": 24,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 2018.2787187499998,
+        "min": 800.0,
+        "max": 4937.5
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 5500.037,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 5500.5,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 5500.029,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 4583.868,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5800.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5800.0
+        },
+        {
+            "current": 5500.0,
+            "min": 800.0,
+            "max": 5800.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5800.0
+        },
+        {
+            "current": 5500.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 5500.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 4297.556,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 4302.929,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 182.2801628112793,
+            "used": 30.96619415283203
+        }
+    },
+    "memory": {
+        "total": 62.557518005371094
+    }
+}

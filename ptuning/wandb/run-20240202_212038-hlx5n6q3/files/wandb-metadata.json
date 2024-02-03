@@ -1,0 +1,256 @@
+{
+    "os": "Linux-6.5.0-15-generic-x86_64-with-glibc2.35",
+    "python": "3.10.13",
+    "heartbeatAt": "2024-02-02T13:20:44.031882",
+    "startedAt": "2024-02-02T13:20:38.091437",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--do_eval",
+        "--train_file",
+        "../data/train.json",
+        "--validation_file",
+        "../data/val.json",
+        "--test_file",
+        "../data/val_less.json",
+        "--preprocessing_num_workers",
+        "1",
+        "--prompt_column",
+        "query",
+        "--response_column",
+        "answer",
+        "--overwrite_cache",
+        "--model_name_or_path",
+        "/data/ai/model/chatglm2-6b",
+        "--output_dir",
+        "output/adgen-chatglm2-6b-pt-128-1e-4",
+        "--overwrite_output_dir",
+        "--max_source_length",
+        "128",
+        "--max_target_length",
+        "256",
+        "--per_device_train_batch_size",
+        "1",
+        "--per_device_eval_batch_size",
+        "4",
+        "--gradient_accumulation_steps",
+        "16",
+        "--predict_with_generate",
+        "--max_steps",
+        "2100",
+        "--logging_steps",
+        "10",
+        "--save_steps",
+        "700",
+        "--learning_rate",
+        "1e-4",
+        "--pre_seq_len",
+        "128",
+        "--quantization_bit=8",
+        "--report_to",
+        "wandb",
+        "--max_eval_samples",
+        "20",
+        "--resume_from_checkpoint",
+        "/data/ai/ChatGLM2-6B/ptuning/output/adgen-chatglm2-6b-pt-128-1e-4/checkpoint-1400"
+    ],
+    "state": "running",
+    "program": "/data/ai/ChatGLM2-6B/ptuning/main.py",
+    "codePathLocal": "main.py",
+    "codePath": "ptuning/main.py",
+    "git": {
+        "remote": "https://github.com/fengyufengzi/ChatGLM2-6B.git",
+        "commit": "284cb911a1f58200ef887669fc0b863d782e28db"
+    },
+    "email": "4328521+fengyufengzi@users.noreply.github.com",
+    "root": "/data/ai/ChatGLM2-6B",
+    "host": "marsen-linux",
+    "username": "ubuntu",
+    "executable": "/home/ubuntu/miniconda3/envs/chatglm2/bin/python",
+    "cpu_count": 24,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 2140.0675312500002,
+        "min": 800.0,
+        "max": 4937.5
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1888.632,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 1822.668,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 1794.909,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 1632.238,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 1752.467,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 1761.138,
+            "min": 800.0,
+            "max": 5800.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5800.0
+        },
+        {
+            "current": 1816.481,
+            "min": 800.0,
+            "max": 5800.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5800.0
+        },
+        {
+            "current": 1782.091,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 1717.383,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5500.0
+        },
+        {
+            "current": 1099.958,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 1717.853,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 1754.502,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 1100.706,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4300.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 182.2801628112793,
+            "used": 26.696067810058594
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": 25757220864
+        }
+    ],
+    "memory": {
+        "total": 62.557525634765625
+    }
+}

@@ -1,0 +1,33 @@
+
+01/26/2024 15:11:05 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1distributed training: True, 16-bits training: False
+/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/datasets/load.py:2483: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py", line 480, in <module>
+    main()
+  File "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py", line 126, in main
+    config = AutoConfig.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/models/auto/configuration_auto.py", line 944, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/configuration_utils.py", line 574, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/configuration_utils.py", line 629, in _get_config_dict
+    resolved_config_file = cached_file(
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/utils/hub.py", line 388, in cached_file
+    raise EnvironmentError(
+OSError: /home/ubuntu/Documents/ai/model/ChatGLM3 does not appear to have a file named config.json. Checkout 'https://huggingface.co//home/ubuntu/Documents/ai/model/ChatGLM3/None' for available files.
+Traceback (most recent call last):
+  File "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py", line 480, in <module>
+    main()
+  File "/home/ubuntu/Documents/ai/ChatGLM2-6B/ptuning/main.py", line 126, in main
+    config = AutoConfig.from_pretrained(model_args.model_name_or_path, trust_remote_code=True)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/models/auto/configuration_auto.py", line 944, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/configuration_utils.py", line 574, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/configuration_utils.py", line 629, in _get_config_dict
+    resolved_config_file = cached_file(
+  File "/home/ubuntu/miniconda3/envs/chatglm2/lib/python3.10/site-packages/transformers/utils/hub.py", line 388, in cached_file
+    raise EnvironmentError(
+OSError: /home/ubuntu/Documents/ai/model/ChatGLM3 does not appear to have a file named config.json. Checkout 'https://huggingface.co//home/ubuntu/Documents/ai/model/ChatGLM3/None' for available files.
